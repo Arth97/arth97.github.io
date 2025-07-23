@@ -1,0 +1,95 @@
+<section id="about" class="section">
+	<div class="container">
+		<h2 class="section-title">Sobre Mí</h2>
+			<div class="about-text">
+				<p class="about-intro">
+					Mi interés por la programación comenzó en bachillerato, me enganchó el reto de resolver problemas como si fueran acertijos.
+					Desde entonces me he enfocado en el desarrollo de aplicaciones tanto del lado del cliente como del servidor.
+				</p>
+				<p>
+					Durante mi formación universitaria, profundicé en lenguajes como Java y C#.
+					Profesionalmente, he trabajado principalmente con Angular en el frontend y con C#, Python y Node.js en el backend.
+				</p>
+				<p>
+					Mi stack de preferencia en proyectos personales es React/Node.js.
+					Me considero una persona persistente y curiosa.
+					Incluso cuando no estoy trabajando, procuro seguir practicando siempre que puedo, aunque sea un poco.
+					Cada pequeño avance es mejor que quedarse quieto.
+				</p>
+			</div>
+	</div>
+</section>
+
+<style>
+	.section {
+		background: var(--color-background);
+	}
+
+	.about-text {
+		font-size: 1.125rem;
+		line-height: 1.8;
+		color: var(--color-text);
+	}
+
+	.about-intro {
+		font-size: 1.25rem;
+		font-weight: 500;
+		color: var(--color-primary);
+		margin-bottom: 1.5rem;
+	}
+
+	.about-text p {
+		margin-bottom: 1.5rem;
+	}
+
+	.about-stats {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+	}
+
+	.stat-item {
+		text-align: center;
+		padding: 1.5rem;
+		background: var(--color-surface);
+		border-radius: 1rem;
+		transition: all 0.3s ease;
+	}
+
+	.stat-item:hover {
+		transform: translateY(-5px);
+		box-shadow: var(--shadow-md);
+	}
+
+	.stat-number {
+		font-size: 2.5rem;
+		font-weight: 700;
+		color: var(--color-secondary);
+		margin-bottom: 0.5rem;
+	}
+
+	.stat-label {
+		font-size: 0.875rem;
+		color: var(--color-text-light);
+		font-weight: 500;
+	}
+
+	@media (max-width: 768px) {
+		.about-text {
+			font-size: 1rem;
+		}
+
+		.about-intro {
+			font-size: 1.125rem;
+		}
+
+		.about-stats {
+			grid-template-columns: 1fr;
+			gap: 1rem;
+		}
+
+		.stat-number {
+			font-size: 2rem;
+		}
+	}
+</style>

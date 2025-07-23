@@ -1,0 +1,237 @@
+<section id="contact" class="section">
+	<div class="container">
+		<h2 class="section-title">Contacto</h2>
+		<div class="contact-content">
+			<div class="contact-info">
+				<p class="contact-description">
+					Estoy buscando nuevas oportunidades como desarrollador full-stack en una empresa donde pueda aportar mis conocimientos y
+					seguir desarrollándome profesionalmente.<br/>
+					
+					No dudes en contactarme si tienes alguna pregunta..
+				</p>
+				
+				<div class="contact-items">
+					<div class="contact-item">
+						<div class="contact-icon">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								<polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</div>
+						<div class="contact-details">
+							<h4>Email</h4>
+							<p>temp@temp.com</p>
+						</div>
+					</div>
+					
+					<div class="contact-item">
+						<div class="contact-icon">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M22 16.92V19.92C22 21.92 20.02 23.92 18.02 23.92C8.91 23.92 2 16.92 2 7.92C2 5.92 3.98 3.92 5.98 3.92H8.98C9.98 3.92 10.98 4.92 10.98 5.92V8.92C10.98 9.92 9.98 10.92 8.98 10.92H7.98C7.98 13.92 10.98 16.92 13.98 16.92V15.92C13.98 14.92 14.98 13.92 15.98 13.92H18.98C19.98 13.92 20.98 14.92 20.98 15.92V18.92C20.98 19.92 19.98 20.92 18.98 20.92H15.98" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</div>
+						<div class="contact-details">
+							<h4>Teléfono</h4>
+							<p>+34 123-456-789</p>
+						</div>
+					</div>
+					
+					<div class="contact-item">
+						<div class="contact-icon">
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M21 10C21 17 12 23 12 23S3 17 3 10C3 6 7 2 12 2S21 6 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								<circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</div>
+						<div class="contact-details">
+							<h4>Ubicación</h4>
+							<p>España</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="contact-form">
+				<form class="form">
+					<div class="form-group">
+						<input type="text" id="name" name="name" placeholder="Tu nombre" required>
+					</div>
+					<div class="form-group">
+						<input type="email" id="email" name="email" placeholder="Tu email" required>
+					</div>
+					<div class="form-group">
+						<input type="text" id="subject" name="subject" placeholder="Asunto" required>
+					</div>
+					<div class="form-group">
+						<textarea id="message" name="message" rows="6" placeholder="Tu mensaje" required></textarea>
+					</div>
+					<button type="submit" class="btn btn-primary">
+						Enviar Mensaje
+						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.section {
+		background: var(--color-background);
+	}
+
+	.contact-content {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 4rem;
+		align-items: start;
+	}
+
+	.contact-description {
+		font-size: 1.125rem;
+		line-height: 1.6;
+		color: var(--color-text-light);
+		margin-bottom: 2rem;
+	}
+
+	.contact-items {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		margin-bottom: 2rem;
+	}
+
+	.contact-item {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		padding: 1rem;
+		background: var(--color-surface);
+		border-radius: 0.5rem;
+		transition: all 0.3s ease;
+	}
+
+	.contact-item:hover {
+		background: var(--color-secondary);
+		color: white;
+	}
+
+	.contact-item:hover .contact-icon {
+		color: white;
+	}
+
+	.contact-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 3rem;
+		height: 3rem;
+		background: white;
+		border-radius: 50%;
+		color: var(--color-secondary);
+		flex-shrink: 0;
+		transition: all 0.3s ease;
+	}
+
+	.contact-details h4 {
+		margin: 0 0 0.25rem 0;
+		font-weight: 600;
+	}
+
+	.contact-details p {
+		margin: 0;
+		color: var(--color-text-light);
+	}
+
+	.contact-item:hover .contact-details p {
+		color: rgba(255, 255, 255, 0.8);
+	}
+
+	.social-links h4 {
+		margin-bottom: 1rem;
+		color: var(--color-primary);
+	}
+
+	.social-icons {
+		display: flex;
+		gap: 1rem;
+	}
+
+	.social-link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 3rem;
+		height: 3rem;
+		background: var(--color-surface);
+		color: var(--color-secondary);
+		border-radius: 50%;
+		text-decoration: none;
+		transition: all 0.3s ease;
+	}
+
+	.social-link:hover {
+		background: var(--color-secondary);
+		color: white;
+		transform: translateY(-3px);
+	}
+
+	.contact-form {
+		margin-top: 1rem;
+		background: white;
+		padding: 2rem;
+		border-radius: 1rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	.form {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.form-group {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.form-group input,
+	.form-group textarea {
+		padding: 0.75rem 1rem;
+		border: 2px solid var(--color-border);
+		border-radius: 0.5rem;
+		font-size: 1rem;
+		transition: all 0.3s ease;
+		background: var(--color-background);
+	}
+
+	.form-group input:focus,
+	.form-group textarea:focus {
+		outline: none;
+		border-color: var(--color-secondary);
+		box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+	}
+
+	.form-group textarea {
+		resize: vertical;
+		min-height: 120px;
+	}
+
+	@media (max-width: 768px) {
+		.contact-content {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+
+		.contact-form {
+			padding: 1.5rem;
+		}
+
+		.contact-subtitle {
+			font-size: 1.5rem;
+		}
+	}
+</style>

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>Arturo Tinajas - Desarrollador Fullstack</title>
+		<meta name="description" content="Portfolio de desarrollador fullstack especializado en tecnologías modernas" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>		
+		<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />          
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--color-primary: #1e293b;
+		--color-secondary: #3b82f6;
+		--color-accent: #10b981;
+		--color-warning: #f59e0b;
+		--color-error: #ef4444;
+		--color-success: #10b981;
+		--color-text: #334155;
+		--color-text-light: #64748b;
+		--color-background: #ffffff;
+		--color-surface: #f8fafc;
+		--color-border: #e2e8f0;
+		--shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+		--shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+		--shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+		--shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	html {
+		font-family: 'Inter', system-ui, sans-serif;
+		scroll-behavior: smooth;
+	}
+
+	body {
+		margin: 0;
+		line-height: 1.6;
+		color: var(--color-text);
+		background-color: var(--color-background);
+	}
+
+	.container {
+		/* max-width: 1200px; */
+		max-width: 1128px;
+		margin: 0 auto;
+		padding: 0 2rem;
+	}
+
+	.section {
+		padding: 5rem 0;
+	}
+
+	.section-title {
+		font-size: 2.5rem;
+		font-weight: 700;
+		text-align: center;
+		margin-bottom: 3rem;
+		color: var(--color-primary);
+	}
+
+	.btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.75rem 1.5rem;
+		border: none;
+		border-radius: 0.5rem;
+		font-weight: 500;
+		text-decoration: none;
+		transition: all 0.2s ease;
+		cursor: pointer;
+	}
+
+	.btn-primary {
+		background: var(--color-secondary);
+		color: white;
+	}
+
+	.btn-primary:hover {
+		background: #2563eb;
+		transform: translateY(-2px);
+		box-shadow: var(--shadow-lg);
+	}
+
+	.btn-outline {
+		background: transparent;
+		color: var(--color-secondary);
+		border: 2px solid var(--color-secondary);
+	}
+
+	.btn-outline:hover {
+		background: var(--color-secondary);
+		color: white;
+		transform: translateY(-2px);
+	}
+
+	.card {
+		background: white;
+		border-radius: 1rem;
+		padding: 2rem;
+		box-shadow: var(--shadow-md);
+		transition: all 0.3s ease;
+	}
+
+	.card:hover {
+		transform: translateY(-5px);
+		box-shadow: var(--shadow-xl);
+	}
+
+	@media (max-width: 768px) {
+		.section {
+			padding: 3rem 0;
+		}
+		
+		.section-title {
+			font-size: 2rem;
+		}
+		
+		.container {
+			padding: 0 1rem;
+		}
+	}
+</style>

@@ -1,0 +1,126 @@
+---
+import { Image } from 'astro:assets';
+---
+
+<section id="home" class="hero">
+	<div class="container">
+		<div class="hero-text">
+			<h1 class="hero-title">
+				Hola, soy <span class="text-gradient">Arturo</span>
+			</h1>
+			<h2 class="hero-subtitle">Desarrollador Fullstack</h2>
+			<p class="hero-description">
+				Soy desarrollador con pasión por crear soluciones limpias y escalables. <br />
+				Me interesa especialmente el diseño de patrones y arquitecturas que aporten claridad y eficiencia al desarrollo de software.
+			</p>
+			<div class="hero-buttons">
+				<a href="#projects" class="btn btn-primary">
+					Ver Proyectos
+					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</a>
+				<a href="#contact" class="btn btn-outline">
+					Contáctame
+				</a>
+				<a href="https://github.com/arth97" class="" target="_blank" rel="noopener">
+					<!-- <Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub"   style="vertical-align: middle;" /> -->
+					<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" loading="eager" width="56" height="56" style="vertical-align: middle;" />
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.hero {
+		min-height: 70vh;
+		display: flex;
+		align-items: center;
+		background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+		padding-top: 80px;
+	}
+
+	.hero-title {
+		font-size: 3.5rem;
+		font-weight: 700;
+		line-height: 1.2;
+		margin-bottom: 1rem;
+		color: var(--color-primary);
+	}
+
+	.text-gradient {
+		background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent) 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	.hero-subtitle {
+		font-size: 1.5rem;
+		font-weight: 500;
+		color: var(--color-text-light);
+		margin-bottom: 1.5rem;
+	}
+
+	.hero-description {
+		font-size: 1.125rem;
+		color: var(--color-text-light);
+		margin-bottom: 2rem;
+		line-height: 1.8;
+	}
+
+	.hero-buttons {
+		display: flex;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+
+	.hero-image {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.hero-avatar {
+		position: relative;
+		z-index: 2;
+	}
+
+	.hero-avatar img {
+		width: 300px;
+		height: 300px;
+		border-radius: 50%;
+		object-fit: cover;
+		box-shadow: var(--shadow-xl);
+	}
+
+	@keyframes float {
+		0%, 100% { transform: translateY(0px); }
+		50% { transform: translateY(-20px); }
+	}
+
+	@media (max-width: 768px) {
+		.hero-title {
+			font-size: 2.5rem;
+		}
+
+		.hero-subtitle {
+			font-size: 1.25rem;
+		}
+
+		.hero-description {
+			font-size: 1rem;
+		}
+
+		.hero-avatar img {
+			width: 200px;
+			height: 200px;
+		}
+
+		.hero-buttons {
+			justify-content: center;
+		}
+	}
+</style>
