@@ -16,6 +16,6 @@ Este repositorio contiene mi portfolio como desarrollador *full-stack*, creado c
 
 ## 📨 Contacto
 
-¿Te interesa colaborar o tienes una oportunidad profesional? Puedes ponerte en contacto conmigo:
+¿Tienes una oportunidad profesional? Puedes ponerte en contacto conmigo:
 
 📧 [arturotinajas@gmail.com](mailto:arturotinajas@gmail.com)
