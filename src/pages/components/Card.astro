@@ -1,0 +1,176 @@
+---
+// Card.astro
+const {
+  title,
+  description,
+  tech = [],
+  image,
+  alt,
+  codeLink = "#",
+  demoLink = "#",
+  category = "all"
+} = Astro.props;
+---
+
+<div class="project-card" data-category={category}>
+  <div class="project-image">
+    <img src={image} alt={alt} />
+    <div class="project-overlay">
+      <div class="project-links">
+        <a href={codeLink} class="project-link" title="Ver código">
+          <!-- Icono de código -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 19C4 20.5 4 16.5 2 16M22 16V22L22 16H22ZM22 16L18.5 12.5L15 16L18.5 19.5L22 16Z"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+        <a href={demoLink} class="project-link" title="Ver demo">
+          <!-- Icono de demo -->
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 13V6A2 2 0 0016 4H4A2 2 0 002 6V16A2 2 0 004 18H7"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M14 15L17 12L14 9"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M10 9L7 12L10 15"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="project-content">
+    <h3 class="project-title">{title}</h3>
+    <p class="project-description">{description}</p>
+    <div class="project-tech">
+      {tech.map((tag: any) => (
+        <span class="tech-tag">{tag}</span>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+	.section {
+		background: var(--color-surface);
+	}
+
+	.projects-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 2rem;
+	}
+
+	.project-card {
+		background: white;
+		border-radius: 1rem;
+		overflow: hidden;
+		box-shadow: var(--shadow-md);
+		transition: all 0.3s ease;
+	}
+
+	.project-card:hover {
+		transform: translateY(-8px);
+		box-shadow: var(--shadow-xl);
+	}
+
+	.project-image {
+		position: relative;
+		height: 200px;
+		overflow: hidden;
+	}
+
+	.project-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.3s ease;
+	}
+
+	.project-card:hover .project-image img {
+		transform: scale(1.05);
+	}
+
+	.project-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(0, 0, 0, 0.8);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+
+	.project-card:hover .project-overlay {
+		opacity: 1;
+	}
+
+	.project-links {
+		display: flex;
+		gap: 1rem;
+	}
+
+	.project-link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 3rem;
+		height: 3rem;
+		background: white;
+		color: var(--color-primary);
+		border-radius: 50%;
+		text-decoration: none;
+		transition: all 0.3s ease;
+	}
+
+	.project-link:hover {
+		background: var(--color-secondary);
+		color: white;
+		transform: scale(1.1);
+	}
+
+	.project-content {
+		padding: 2rem;
+	}
+
+	.project-title {
+		font-size: 1.5rem;
+		font-weight: 600;
+		color: var(--color-primary);
+		margin-bottom: 1rem;
+	}
+
+	.project-description {
+		color: var(--color-text-light);
+		line-height: 1.6;
+		margin-bottom: 1.5rem;
+	}
+
+	.project-tech {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.tech-tag {
+		background: var(--color-surface);
+		color: var(--color-secondary);
+		padding: 0.25rem 0.75rem;
+		border-radius: 1rem;
+		font-size: 0.875rem;
+		font-weight: 500;
+	}
+
+	@media (max-width: 768px) {
+		.projects-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.project-content {
+			padding: 1.5rem;
+		}
+	}
+</style>

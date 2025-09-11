@@ -1,11 +1,232 @@
 ---
 import { Image } from 'astro:assets';
+import Card from '../components/Card.astro';
+
+const projects = [
+  {
+    title: "My Task Board",
+    description: "!!!CAMBIAR",
+    tech: ["Next.js", "Supabase", "PostgreSQL", "React", "Node.js", "Tailwindcss", "CSS", "HTML"],
+    image: "task-board.png",
+    alt: "Task Board",
+    codeLink: "https://github.com/Arth97/devchallenge-my-task-board",
+    demoLink: "https://devchallenge-my-task-board.vercel.app",
+    category: "devchallenges"
+  },
+  {
+    title: "Country Quiz",
+    description: "",
+    tech: ["React", "Node.js", "Tailwindcss", "CSS", "HTML"],
+    image: "/country-quiz.png",
+    alt: "Country Quiz",
+    codeLink: "https://github.com/Arth97/devchallenge-country-quiz",
+    demoLink: "https://arth97.github.io/devchallenge-country-quiz",
+    category: "devchallenges"
+  },
+  {
+    title: "Country Page - WorldRanks",
+    description: "",
+    tech: ["React", "Node.js", "Tailwindcss", "CSS", "HTML"],
+    image: "/country-page-worldrank.png",
+    alt: "Country Page - WorldRanks",
+    codeLink: "https://github.com/Arth97/devchallenge-country-page-worldRanks",
+    demoLink: "https://arth97.github.io/devchallenge-country-page-worldRanks",
+    category: "devchallenges"
+  },
+  {
+    title: "GitHub Profile",
+    description: "",
+    tech: ["React", "Node.js", "Tailwindcss", "CSS", "HTML"],
+    image: "/github-profile.png",
+    alt: "GitHub Profile",
+    codeLink: "https://github.com/Arth97/devChallenge-github-profile",
+    demoLink: "https://arth97.github.io/devChallenge-github-profile",
+    category: "devchallenges"
+  },
+  {
+    title: "Simple Coffee Listing",
+    description: "",
+    tech: ["React", "Tailwindcss", "CSS", "HTML"],
+    image: "/coffee-listing.png",
+    alt: "Simple Coffee Listing",
+    codeLink: "https://github.com/Arth97/devChallenge-simple-coffee-listing",
+    demoLink: "https://arth97.github.io/devChallenge-simple-coffee-listing",
+    category: "devchallenges"
+  },
+	{
+    title: "Guess The Word Game",
+    description: "",
+    tech: ["React", "Tailwindcss", "CSS", "HTML"],
+    image: "/guess-the-word.png",
+    alt: "Guess The Word Game",
+    codeLink: "https://github.com/Arth97/devChallenge-guess-the-word-game",
+    demoLink: "https://arth97.github.io/devChallenge-guess-the-word-game",
+    category: "devchallenges"
+  },
+	{
+    title: "Music Player",
+    description: "",
+    tech: ["React", "Tailwindcss", "CSS", "HTML"],
+    image: "/music-player.png",
+    alt: "Music Player",
+    codeLink: "https://github.com/Arth97/devChallenge-music-player",
+    demoLink: "https://arth97.github.io/devChallenge-music-player",
+    category: "devchallenges"
+  },
+	{
+    title: "Multi-step Register Form",
+    description: "",
+    tech: ["React", "Tailwindcss", "CSS", "HTML"],
+    image: "register-form.png",
+    alt: "Multi-step Register Form",
+    codeLink: "https://github.com/Arth97/devChallenge-multi-step-register-form",
+    demoLink: "https://arth97.github.io/devChallenge-multi-step-register-form",
+    category: "devchallenges"
+  },
+	{
+    title: "Device Shop Checkout",
+    description: "",
+    tech: ["React", "Tailwindcss", "CSS", "HTML"],
+    image: "device-shop-checkout.png",
+    alt: "Device Shop Checkout",
+    codeLink: "https://github.com/Arth97/devChallenge-device-shop-checkout",
+    demoLink: "https://arth97.github.io/devChallenge-device-shop-checkout",
+    category: "devchallenges"
+  },
+	{
+    title: "Contact Page",
+    description: "",
+    tech: ["React", "Tailwindcss", "CSS", "HTML"],
+    image: "contact-page.png",
+    alt: "Contact Page",
+    codeLink: "https://github.com/Arth97/devChallenge-contact-page",
+    demoLink: "https://arth97.github.io/devChallenge-contact-page",
+    category: "devchallenges"
+  },
+	{
+    title: "Meet the Team Section",
+    description: "",
+    tech: ["React", "Tailwindcss", "CSS", "HTML"],
+    image: "meet-the-team.png",
+    alt: "Meet the Team Section",
+    codeLink: "https://github.com/Arth97/devChallenge-meet-the-team-section",
+    demoLink: "https://arth97.github.io/devChallenge-meet-the-team-section",
+    category: "devchallenges"
+  },
+	{
+    title: "Business Blog Card",
+    description: "",
+    tech: ["React", "Tailwindcss", "CSS", "HTML"],
+    image: "business-blog.png",
+    alt: "Business Blog Card",
+    codeLink: "https://github.com/Arth97/devChallenge-business-blog-card",
+    demoLink: "https://arth97.github.io/devChallenge-business-blog-card",
+    category: "devchallenges"
+  },
+	{
+    title: "Simple Feature Section",
+    description: "",
+    tech: ["React", "Tailwindcss", "CSS", "HTML"],
+    image: "feature-section.png",
+    alt: "Simple Feature Section",
+    codeLink: "https://github.com/Arth97/devChallenge-simple-feature-section",
+    demoLink: "https://arth97.github.io/devChallenge-simple-feature-section",
+    category: "devchallenges"
+  },
+	{
+    title: "Testimonial Page",
+    description: "",
+    tech: ["React", "Tailwindcss", "CSS", "HTML"],
+    image: "testimonial-page.png",
+    alt: "Testimonial Page",
+    codeLink: "https://github.com/Arth97/devChallenge-testimonial-page",
+    demoLink: "https://arth97.github.io/devChallenge-testimonial-page",
+    category: "devchallenges"
+  },
+	{
+    title: "Simple Article Listing",
+    description: "",
+    tech: ["React", "Tailwindcss", "CSS", "HTML"],
+    image: "article-listing.png",
+    alt: "Simple Article Listing",
+    codeLink: "https://github.com/Arth97/devChallenge-simple-article-listing",
+    demoLink: "https://arth97.github.io/devChallenge-simple-article-listing",
+    category: "devchallenges"
+  },
+	{
+    title: "Join Our Newsletter",
+    description: "",
+    tech: ["React", "Tailwindcss", "CSS", "HTML"],
+    image: "newsletter.png",
+    alt: "Join Our Newsletter",
+    codeLink: "https://github.com/Arth97/devChallenge-join-our-newsletter",
+    demoLink: "https://arth97.github.io/devChallenge-join-our-newsletter",
+    category: "devchallenges"
+  },
+	{
+    title: "Minimal Blog Card",
+    description: "",
+    tech: ["React", "Tailwindcss", "CSS", "HTML"],
+    image: "minimal-blog-card.png",
+    alt: "Minimal Blog Card",
+    codeLink: "https://github.com/Arth97/devChallenge-minimal-blog-card",
+    demoLink: "https://arth97.github.io/devChallenge-minimal-blog-card",
+    category: "devchallenges"
+  },
+	{
+    title: "Simple Frequently Asked Questions (FAQ)",
+    description: "",
+    tech: ["React", "Tailwindcss", "CSS", "HTML"],
+    image: "faq.png",
+    alt: "Simple Frequently Asked Questions (FAQ)",
+    codeLink: "https://github.com/Arth97/devChallenge-FAQ",
+    demoLink: "https://arth97.github.io/devChallenge-FAQ",
+    category: "devchallenges"
+  },
+	{
+    title: "TEMPLATE",
+    description: "",
+    tech: ["React", "Tailwindcss", "CSS", "HTML"],
+    image: "template",
+    alt: "TEMPLATE",
+    codeLink: "https://github.com/Arth97/TEMPLATE",
+    demoLink: "https://arth97.github.io/TEMPLATE",
+    category: "devchallenges"
+  },
+	{
+    title: "TEMPLATE",
+    description: "",
+    tech: ["React", "Tailwindcss", "CSS", "HTML"],
+    image: "",
+    alt: "TEMPLATE",
+    codeLink: "https://github.com/Arth97/TEMPLATE",
+    demoLink: "https://arth97.github.io/TEMPLATE",
+    category: "devchallenges"
+  },
+];
 ---
 
 <section id="projects" class="section">
 	<div class="container">
 		<h2 class="section-title">Proyectos Destacados</h2>
+		<div class="project-filter">
+			<button class="filter-btn active" data-filter="all">Todos</button>
+			<button class="filter-btn" data-filter="devchallenges">DevChallenges</button>
+			<button class="filter-btn" data-filter="frontend-mentor">Frontend Mentor</button>
+		</div>
 		<div class="projects-grid">
+			{projects.map(project => (
+				<Card
+					title={project.title}
+					description={project.description}
+					tech={project.tech}
+					image={project.image}
+					alt={project.alt}
+					codeLink={project.codeLink}
+					demoLink={project.demoLink}
+					category={project.category}
+				/>
+			))}
 			<div class="project-card">
 				<div class="project-image">
 					<img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Proyecto E-commerce" />
@@ -41,7 +262,7 @@ import { Image } from 'astro:assets';
 				</div>
 			</div>
 			
-			<div class="project-card">
+			<!-- <div class="project-card">
 				<div class="project-image">
 					<img src="https://images.pexels.com/photos/270408/pexels-photo-270408.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Proyecto Task Manager" />
 					<div class="project-overlay">
@@ -214,7 +435,7 @@ import { Image } from 'astro:assets';
 						<span class="tech-tag">Vercel</span>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </section>
