@@ -20,11 +20,11 @@
 						</div>
 						<div class="contact-details">
 							<h4>Email</h4>
-							<p>temp@temp.com</p>
+							<p>arturotinajas@gmail.com</p>
 						</div>
 					</div>
 					
-					<div class="contact-item">
+					<!-- <div class="contact-item">
 						<div class="contact-icon">
 							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M22 16.92V19.92C22 21.92 20.02 23.92 18.02 23.92C8.91 23.92 2 16.92 2 7.92C2 5.92 3.98 3.92 5.98 3.92H8.98C9.98 3.92 10.98 4.92 10.98 5.92V8.92C10.98 9.92 9.98 10.92 8.98 10.92H7.98C7.98 13.92 10.98 16.92 13.98 16.92V15.92C13.98 14.92 14.98 13.92 15.98 13.92H18.98C19.98 13.92 20.98 14.92 20.98 15.92V18.92C20.98 19.92 19.98 20.92 18.98 20.92H15.98" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -34,7 +34,7 @@
 							<h4>Teléfono</h4>
 							<p>+34 123-456-789</p>
 						</div>
-					</div>
+					</div> -->
 					
 					<div class="contact-item">
 						<div class="contact-icon">
@@ -45,33 +45,41 @@
 						</div>
 						<div class="contact-details">
 							<h4>Ubicación</h4>
-							<p>España</p>
+							<p>El Albir, Alicante, España</p>
 						</div>
 					</div>
 				</div>
 			</div>
 			
 			<div class="contact-form">
-				<form class="form">
-					<div class="form-group">
-						<input type="text" id="name" name="name" placeholder="Tu nombre" required>
+				<!-- <form class="form" id="form" action="https://formspree.io/f/xwpnyjdz" method="POST"> -->
+				<form class="form" id="form" method="POST">
+					<div class="form-fields">
+						<div class="form-group">
+							<input type="text" id="name" name="name" placeholder="Tu nombre" required>
+						</div>
+						<div class="form-group">
+							<input type="email" id="email" name="email" placeholder="Tu email" required>
+						</div>
+						<div class="form-group">
+							<input type="text" id="subject" name="subject" placeholder="Asunto" required>
+						</div>
+						<div class="form-group">
+							<textarea id="message" name="message" rows="4" placeholder="Tu mensaje" required></textarea>
+						</div>
+
+						<!-- TODO -->
+						<!-- <input type="hidden" name="_next" value="https://user.github.io/#contact"> -->
+
+						<button type="submit" class="btn btn-primary">
+							Enviar Mensaje
+							<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</button>
 					</div>
-					<div class="form-group">
-						<input type="email" id="email" name="email" placeholder="Tu email" required>
-					</div>
-					<div class="form-group">
-						<input type="text" id="subject" name="subject" placeholder="Asunto" required>
-					</div>
-					<div class="form-group">
-						<textarea id="message" name="message" rows="6" placeholder="Tu mensaje" required></textarea>
-					</div>
-					<button type="submit" class="btn btn-primary">
-						Enviar Mensaje
-						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-							<path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-						</svg>
-					</button>
+					<span id="form-status" style="margin-top: 10px; margin-bottom: -20px;"></span>
 				</form>
 			</div>
 		</div>
@@ -180,7 +188,7 @@
 	}
 
 	.contact-form {
-		margin-top: 1rem;
+		margin-top: -1rem;
 		background: white;
 		padding: 2rem;
 		border-radius: 1rem;
@@ -188,6 +196,11 @@
 	}
 
 	.form {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.form-fields {
 		display: flex;
 		flex-direction: column;
 		gap: 1.5rem;
@@ -235,3 +248,43 @@
 		}
 	}
 </style>
+
+<script>
+  const form = document.getElementById('form') as HTMLFormElement | null;
+  const status = document.getElementById('form-status');
+
+	if (form && status) {
+		form.addEventListener('submit', async (e) => {
+			e.preventDefault();
+
+			const formData = new FormData(form);
+
+			try {
+				const response = await fetch('https://formspree.io/f/xwpnyjdz', {
+					method: 'POST',
+					headers: {
+						'Accept': 'application/json'
+					},
+					body: formData
+				});
+
+				if (response.ok) {
+					status.textContent = "✅ Tu mensaje fue enviado con éxito.";
+					status.style.color = "green";
+					form.reset();
+				} else {
+					const data = await response.json();
+					if (data.errors) {
+						status.textContent = data.errors.map((err: any) => err.message).join(", ");
+					} else {
+						status.textContent = "❌ Hubo un error al enviar tu mensaje.";
+					}
+					status.style.color = "red";
+				}
+			} catch (error) {
+				status.textContent = "❌ Error de conexión. Intenta más tarde.";
+				status.style.color = "red";
+			}
+		});
+	}
+</script>
