@@ -1,9 +1,9 @@
 <nav class="nav">
 	<div class="container">
 		<div class="nav-content">
-			<a href="#home" class="nav-logo">
-				<!-- <span>Portfolio</span> -->
-			</a>
+			<!-- <a href="#home" class="nav-logo">
+				<span>Portfolio</span>
+			</a> -->
 			<div class="nav-links">
 				<a href="#home" class="nav-link">
 					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="nav-icon">
@@ -62,7 +62,8 @@
 
 	.nav-content {
 		display: flex;
-		justify-content: space-between;
+		/* justify-content: space-between; */
+		justify-content: center;
 		align-items: center;
 		padding: 1rem 0;
 	}
@@ -139,6 +140,10 @@
 	}
 
 	@media (max-width: 768px) {
+		.nav-content {
+			justify-content: flex-end;
+		}
+
 		.nav-links {
 			position: fixed;
 			top: 100%;
