@@ -1,9 +1,9 @@
 ---
-// Card.astro
+import { Image } from 'astro:assets';
 const {
   title,
   description,
-  tech = [],
+  techIcon = [],
   image,
   alt,
   codeLink = "#",
@@ -42,24 +42,14 @@ const {
     <h3 class="project-title">{title}</h3>
     <p class="project-description">{description}</p>
     <div class="project-tech">
-      {tech.map((tag: any) => (
-        <span class="tech-tag">{tag}</span>
+      {techIcon.map((t: any) => (
+				<Image src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${t}/${t}-original.svg`} alt={`${t}`} loading="eager" width="35" height="35" /> 
       ))}
     </div>
   </div>
 </div>
 
 <style>
-	.section {
-		background: var(--color-surface);
-	}
-
-	.projects-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-		gap: 2rem;
-	}
-
 	.project-card {
 		background: white;
 		border-radius: 1rem;
@@ -152,7 +142,7 @@ const {
 	.project-tech {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.5rem;
+		gap: 1rem;
 	}
 
 	.tech-tag {
@@ -165,10 +155,6 @@ const {
 	}
 
 	@media (max-width: 768px) {
-		.projects-grid {
-			grid-template-columns: 1fr;
-		}
-
 		.project-content {
 			padding: 1.5rem;
 		}
