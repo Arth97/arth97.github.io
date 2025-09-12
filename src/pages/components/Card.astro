@@ -17,23 +17,15 @@ const {
     <img src={image} alt={alt} />
     <div class="project-overlay">
       <div class="project-links">
-        <a href={codeLink} class="project-link" title="Ver código">
-          <!-- Icono de código -->
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 19C4 20.5 4 16.5 2 16M22 16V22L22 16H22ZM22 16L18.5 12.5L15 16L18.5 19.5L22 16Z"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
+        <a href={codeLink} class="project-link" title="Ver código" target="_blank" rel="noopener">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="32" height="32">
+						<path fill-rule="evenodd" d="M14.447 3.026a.75.75 0 0 1 .527.921l-4.5 16.5a.75.75 0 0 1-1.448-.394l4.5-16.5a.75.75 0 0 1 .921-.527ZM16.72 6.22a.75.75 0 0 1 1.06 0l5.25 5.25a.75.75 0 0 1 0 1.06l-5.25 5.25a.75.75 0 1 1-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 0 1 0-1.06Zm-9.44 0a.75.75 0 0 1 0 1.06L2.56 12l4.72 4.72a.75.75 0 0 1-1.06 1.06L.97 12.53a.75.75 0 0 1 0-1.06l5.25-5.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
+					</svg>					
         </a>
-        <a href={demoLink} class="project-link" title="Ver demo">
-          <!-- Icono de demo -->
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18 13V6A2 2 0 0016 4H4A2 2 0 002 6V16A2 2 0 004 18H7"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M14 15L17 12L14 9"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M10 9L7 12L10 15"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
+        <a href={demoLink} class="project-link" title="Ver demo" target="_blank" rel="noopener">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+						<path fill-rule="evenodd" d="M2.25 5.25a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3V15a3 3 0 0 1-3 3h-3v.257c0 .597.237 1.17.659 1.591l.621.622a.75.75 0 0 1-.53 1.28h-9a.75.75 0 0 1-.53-1.28l.621-.622a2.25 2.25 0 0 0 .659-1.59V18h-3a3 3 0 0 1-3-3V5.25Zm1.5 0v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5Z" clip-rule="evenodd" />
+					</svg>					
         </a>
       </div>
     </div>
@@ -100,15 +92,15 @@ const {
 
 	.project-links {
 		display: flex;
-		gap: 1rem;
+		gap: 1.5rem;
 	}
 
 	.project-link {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 3rem;
-		height: 3rem;
+		width: 4rem;
+		height: 4rem;
 		background: white;
 		color: var(--color-primary);
 		border-radius: 50%;

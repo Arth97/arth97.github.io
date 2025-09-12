@@ -33,6 +33,26 @@ const projects = [
     demoLink: "https://arth97.github.io/devchallenge-country-page-worldRanks",
     category: "devchallenges"
   },
+	{
+    title: "Time Tracking Dashboard",
+    description: "⏱️ Dashboard responsive con JavaScript, Tailwind, HTML, CSS y JS. Visualiza datos desde JSON local, cambia entre Daily, Weekly y Monthly con actualización dinámica.",
+    techIcon: ["react", "javascript", "tailwindcss", "css3", "html5"],
+    image: "time-tracking-dashboard.png",
+    alt: "Time Tracking Dashboard",
+    codeLink: "https://github.com/Arth97/frontendmentor-time-tracking-dashboard",
+    demoLink: "https://arth97.github.io/frontendmentor-time-tracking-dashboard",
+    category: "frontendmentor"
+  },
+	{
+    title: "REST Countries API",
+    description: "🌍 Web app en React que consume la API REST Countries para listar, buscar y filtrar países por región. Incluye detalles con navegación entre fronteras y modo claro/oscuro.",
+    techIcon: ["react", "javascript", "tailwindcss", "css3", "html5"],
+    image: "countries-color-theme.png",
+    alt: "REST Countries API",
+    codeLink: "https://github.com/Arth97/frontendmentor-countries-page-color-theme-switcher",
+    demoLink: "https://arth97.github.io/frontendmentor-countries-page-color-theme-switcher",
+    category: "frontendmentor"
+  },
   {
     title: "GitHub Profile",
     description: "🔍 App responsive en JavaScript que integra múltiples endpoints de la GitHub REST API para buscar usuarios, listar repositorios y abrir detalles en nuevas pestañas.",
@@ -184,26 +204,6 @@ const projects = [
     category: "devchallenges"
   },
 	{
-    title: "Time Tracking Dashboard",
-    description: "⏱️ Dashboard responsive con JavaScript, Tailwind, HTML, CSS y JS. Visualiza datos desde JSON local, cambia entre Daily, Weekly y Monthly con actualización dinámica.",
-    techIcon: ["react", "javascript", "tailwindcss", "css3", "html5"],
-    image: "time-tracking-dashboard.png",
-    alt: "Time Tracking Dashboard",
-    codeLink: "https://github.com/Arth97/frontendmentor-time-tracking-dashboard",
-    demoLink: "https://arth97.github.io/frontendmentor-time-tracking-dashboard",
-    category: "frontendmentor"
-  },
-	{
-    title: "REST Countries API",
-    description: "🌍 Web app en React que consume la API REST Countries para listar, buscar y filtrar países por región. Incluye detalles con navegación entre fronteras y modo claro/oscuro.",
-    techIcon: ["react", "javascript", "tailwindcss", "css3", "html5"],
-    image: "countries-color-theme.png",
-    alt: "REST Countries API",
-    codeLink: "https://github.com/Arth97/frontendmentor-countries-page-color-theme-switcher",
-    demoLink: "https://arth97.github.io/frontendmentor-countries-page-color-theme-switcher",
-    category: "frontendmentor"
-  },
-	{
     title: "Contact Form",
     description: "📧 Formulario accesible con validación en tiempo real, mensajes para lectores de pantalla y navegación completa por teclado. Diseño responsivo con feedback visual y toast de éxito.",
     techIcon: ["tailwindcss", "css3", "html5"],
@@ -241,16 +241,7 @@ const projects = [
     codeLink: "https://github.com/Arth97/TEMPLATE",
     demoLink: "https://arth97.github.io/TEMPLATE",
     category: "TEMPLATE"
-  },
-	{
-    title: "TEMPLATE",
-    description: "",
-    image: "",
-    alt: "TEMPLATE",
-    codeLink: "https://github.com/Arth97/TEMPLATE",
-    demoLink: "https://arth97.github.io/TEMPLATE",
-    category: "TEMPLATE"
-  },
+  }
 ];
 ---
 
@@ -258,9 +249,21 @@ const projects = [
 	<div class="container">
 		<h2 class="section-title">Proyectos Destacados</h2>
 		<div class="project-filter">
-			<button class="filter-btn active" data-filter="all">Todos</button>
-			<button class="filter-btn" data-filter="devchallenges">DevChallenges</button>
-			<button class="filter-btn" data-filter="frontend-mentor">Frontend Mentor</button>
+			<button class="btn btn-outline btn-active filter-btn-content" data-filter="all">Todos</button>
+
+			<button class="btn btn-outline" data-filter="devchallenges">
+				<span class="filter-btn-content">
+					<img src="devchallenges.png" alt="DevChallenge" width="20" height="20" />
+					 DevChallenges
+				</span>
+			</button>
+
+			<button class="btn btn-outline" data-filter="frontendmentor">
+				<span class="filter-btn-content">
+					<img src="frontendmentor.png" alt="Frontend Mentor" width="20" height="20" />
+					 Frontend Mentor
+				</span>				
+			</button>
 		</div>
 		<div class="projects-grid">
 			{projects.map(project => (
@@ -284,6 +287,40 @@ const projects = [
 		background: var(--color-surface);
 	}
 
+	.project-filter {
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+		margin-bottom: 2.5rem;
+	}
+
+	.filter-btn {
+		padding: 0.5rem 1.25rem;
+		border-radius: 2rem;
+		border: 1px solid var(--color-primary);
+		background: transparent;
+		color: var(--color-text);
+		font-size: 0.9rem;
+		font-weight: 500;
+		transition: all 0.3s ease;
+		cursor: pointer;
+		&:hover {
+			background: rgba(var(--color-primary-rgb), 0.1);
+		}
+		&.active {
+			background: var(--color-secondary);
+			color: var(--color-on-primary);
+		}
+	}
+
+	.filter-btn-content {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-size: medium;
+		font-weight: 500;
+	}
+
 	.projects-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -297,3 +334,34 @@ const projects = [
 
 	}
 </style>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+			const buttons = document.querySelectorAll('.project-filter [data-filter]');
+			const cards = document.querySelectorAll('.projects-grid .project-card');
+
+			function applyFilter(filter: any) {
+					cards.forEach((card: any) => {
+							const category = card.getAttribute('data-category');
+							const show = filter === 'all' || category === filter;
+							card.style.display = show ? '' : 'none';
+					});
+			}
+
+			buttons.forEach(btn => {
+					btn.addEventListener('click', () => {
+							const filter = btn.getAttribute('data-filter');
+
+							// Actualiza estado visual del botón activo
+							buttons.forEach(b => b.classList.remove('btn-active'));
+							btn.classList.add('btn-active');
+
+							applyFilter(filter);
+					});
+			});
+
+			// Aplica el filtro inicial según el botón marcado inicialmente
+			const initial = document.querySelector('.project-filter .btn-active')?.getAttribute('data-filter') || 'all';
+			applyFilter(initial);
+	});
+</script>
