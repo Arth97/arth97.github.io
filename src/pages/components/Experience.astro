@@ -269,17 +269,28 @@ import { Image } from 'astro:assets';
 			grid-template-columns: 1fr;
 			gap: 2rem;
 		}
-
+		
 		.timeline-item {
 			padding-left: 2rem;
 		}
-
+		
 		.timeline-content {
 			padding: 1.5rem;
 		}
-
+		
 		.timeline-content:hover {
 			transform: none;
+		}
+	}
+	@media (max-width: 768px) {
+		.timeline-item {		
+			padding-left: 1.75rem;
+		}
+		.experience-timeline::before {
+			left: 0.5rem;
+		}
+		.timeline-marker {
+			left: 0rem;	
 		}
 	}
 </style>

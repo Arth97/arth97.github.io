@@ -294,6 +294,10 @@ const projects = [
 		margin-bottom: 2.5rem;
 	}
 
+	.project-filter .btn {
+		padding: 0.25rem 0.75rem;
+	}
+
 	.filter-btn {
 		padding: 0.5rem 1.25rem;
 		border-radius: 2rem;
@@ -331,7 +335,11 @@ const projects = [
 		.projects-grid {
 			grid-template-columns: 1fr;
 		}
-
+	}
+	@media (max-width: 576px) {
+		.filter-btn-content {
+			font-size: small;
+		}
 	}
 </style>
 
