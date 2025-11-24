@@ -27,16 +27,9 @@ const t = dict.en;
 
 <script>
 	try {
-		// const saved = localStorage.getItem('lang');
-		// if (!saved) {
-			const browser = (navigator.language || '').toLowerCase();
-			const isEn = browser.startsWith('en');
-			if (!isEn && !location.pathname.startsWith('/es/')) {
-				localStorage.setItem('lang', 'es');
-				location.replace('/es/');
-			} else if (isEn) {
-				localStorage.setItem('lang', 'en');
-			}
-		// }
+		const browser = (navigator.language || '').toLowerCase();
+		const isEn = browser.startsWith('en');
+		if (!isEn && !location.pathname.startsWith('/es/'))
+			location.replace('/es/');
 	} catch {}
 </script>
