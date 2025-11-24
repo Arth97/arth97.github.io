@@ -1,27 +1,29 @@
 ---
 import { Image } from 'astro:assets';
+const { t } = Astro.props;
 ---
 
 <section id="home" class="hero">
 	<div class="container">
 		<div class="hero-text">
 			<h1 class="hero-title">
-				Hola, soy <span class="text-gradient">Arturo</span>
+				{t.hero.titlePrefix}<span class="text-gradient">Arturo</span>
 			</h1>
-			<h2 class="hero-subtitle">Desarrollador Fullstack</h2>
+			<h2 class="hero-subtitle">Fullstack Developer</h2>
 			<p class="hero-description">
-				Soy desarrollador con pasión por crear soluciones limpias y escalables. <br />
-				Me interesa especialmente el diseño de patrones y arquitecturas que aporten claridad y eficiencia al desarrollo de software.
+				{t.hero.d1}
+				<br/>
+				{t.hero.d2}
 			</p>
 			<div class="hero-buttons">
 				<a href="#projects" class="btn btn-primary">
-					Ver Proyectos
+					{t.hero.ctaProjects}
 					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 					</svg>
 				</a>
 				<a href="#contact" class="btn btn-outline">
-					Contáctame
+					{t.hero.ctaContact}
 				</a>
 				<a href="https://github.com/arth97" class="" target="_blank" rel="noopener">
 					<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub" loading="eager" width="56" height="56" style="vertical-align: middle;" />

@@ -1,16 +1,20 @@
+---
+const { t } = Astro.props;
+---
+
 <footer class="footer">
 	<div class="container">
 		<div class="footer-section">
 			<ul class="footer-links">
-				<li><a href="#home">Inicio</a></li>
-				<li><a href="#about">Sobre mí</a></li>
-				<li><a href="#experience">Experiencia</a></li>
-				<li><a href="#projects">Proyectos</a></li>
-				<li><a href="#contact">Contacto</a></li>
+				<li><a href="#home">{t.footer.links.home}</a></li>
+				<li><a href="#about">{t.footer.links.about}</a></li>
+				<li><a href="#experience">{t.footer.links.experience}</a></li>
+				<li><a href="#projects">{t.footer.links.projects}</a></li>
+				<li><a href="#contact">{t.footer.links.contact}</a></li>
 			</ul>
 		</div>
 	<div class="footer-bottom">
-		<p>Desarrollado con ❤️ usando Astro</p>
+		<p>Built with ❤️ using Astro</p>
 	</div>
 </footer>
 

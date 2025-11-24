@@ -1,27 +1,26 @@
 ---
 import { Image } from 'astro:assets';
+const { t } = Astro.props;
 ---
 
 <section id="experience" class="section">
 	<div class="container">
-		<h2 class="section-title">Experiencia</h2>
+		<h2 class="section-title">{t.experience.title}</h2>
 		<div class="experience-timeline">
 			<div class="timeline-item">
 				<div class="timeline-marker"></div>
 				<div class="timeline-content">
 					<h3 class="timeline-title">Full Stack Developer</h3>
-					<div class="timeline-company">The Wise Seeker </div>
+					<div class="timeline-company">The Wise Seeker</div>
 					<div class="timeline-date">02/2024 – 02/2025</div>		
 					<p class="timeline-description">
-						Plataforma digital de evaluación y selección de talentos.
+						{t.experience.thewiseseeker.d1}
 					</p>
 					<p class="timeline-description">
-						En el frontend, participé en el desarrollo de nuevas funcionalidades, resolución de issues y mejora de la interfaz web, 
-						utilizando Angular, NgRx, NgXs, Bootstrap, Tailwind y Storybook para construir componentes consistentes y reutilizables.
+						{t.experience.thewiseseeker.d2}
 					</p>
 					<p class="timeline-description">
-						En el backend, trabajé en la refactorización de servicios, desarrollo de nuevos endpoints y resolución de errores, 
-						utilizando Python, FastAPI, MongoDB y SQL.
+						{t.experience.thewiseseeker.d3}
 					</p>
 					<div class="timeline-skills">
 						<span class="skill-tag">
@@ -67,14 +66,13 @@ import { Image } from 'astro:assets';
 					<div class="timeline-company">Wimtruck / Mojito360</div>
 					<div class="timeline-date">03/2022 – 05/2023</div>
 					<p class="timeline-description">
-						Aplicación de logística marítima y aérea.
+						{t.experience.mojito360.d1}
 					</p>
 					<p class="timeline-description">
-						En el frontend, trabajé en conjunto con el diseñador UI/UX para implementar nuevas interfaces y funcionalidades, 
-						además de encargarme del mantenimiento y pruebas E2E utilizando herramientas como Angular, Redux, RxJs, NgRx, Bootstrap y Cypress.
+						{t.experience.mojito360.d2}
 					</p>
 					<p class="timeline-description">
-						En el backend, desarrollé nuevas APIs y controladores, así como tareas de mantenimiento usando C#, SQL y Azure Functions.
+						{t.experience.mojito360.d3}
 					</p>
 					<div class="timeline-skills">
 						<span class="skill-tag">
@@ -120,17 +118,15 @@ import { Image } from 'astro:assets';
 					<div class="timeline-company">Shop2Front </div>
 					<div class="timeline-date">04/2020 – 10/2020</div>
 					<p class="timeline-description">
-						Comencé mi carrera profesional y aprendí las bases del desarrollo web y metodologías ágiles.
+						{t.experience.shop2front.d1}
 					</p>
 					<p class="timeline-description">
-						Trabajé como freelance full stack developer en la aplicación movil Shop2Front junto con 2
-						compañeros, desarrollada con Ionic Framework, Angular y Firebase.
-					<p class="timeline-description">
-						Desarrollé una landing para promocionar la aplicación utilizando HTML, JavaScript y CSS.
-						Llevamos a cabo una metodología Lean para el desarrollo en equipo.
-					</p>
-					<p class="timeline-description">
-						Actualmente la aplicación no esta disponible pero se pueden ver algunos ejemplos en el siguiente link.
+						{t.experience.shop2front.d2}
+						<p class="timeline-description">
+							{t.experience.shop2front.d3}
+						</p>
+						<p class="timeline-description">
+							{t.experience.shop2front.d4}
 						<a href="https://instagram.com/shop2front">Shop2front</a>
 					</p>
 					<div class="timeline-skills">

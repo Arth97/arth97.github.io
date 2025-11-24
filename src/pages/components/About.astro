@@ -1,20 +1,19 @@
+---
+const { t } = Astro.props;
+---
+
 <section id="about" class="section">
 	<div class="container">
-		<h2 class="section-title">Sobre Mí</h2>
+		<h2 class="section-title">{t.about.title}</h2>
 			<div class="about-text">
 				<p class="about-intro">
-					Mi interés por la programación comenzó en bachillerato, me enganchó el reto de resolver problemas como si fueran acertijos.
-					Desde entonces me he enfocado en el desarrollo de aplicaciones tanto del lado del cliente como del servidor.
+					{t.about.p1}
 				</p>
 				<p>
-					Durante mi formación universitaria, profundicé en lenguajes como Java y C#.
-					Profesionalmente, he trabajado principalmente con Angular en el frontend y con C#, Python y Node.js en el backend.
+					{t.about.p2}
 				</p>
 				<p>
-					Mi stack de preferencia en proyectos personales es React/Node.js.
-					Me considero una persona persistente y curiosa.
-					Incluso cuando no estoy trabajando, procuro seguir practicando siempre que puedo, aunque sea un poco.
-					Cada pequeño avance es mejor que quedarse quieto.
+					{t.about.p3}
 				</p>
 			</div>
 	</div>

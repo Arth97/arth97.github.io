@@ -1,11 +1,18 @@
+---
+const isEs = Astro.url.pathname.startsWith('/es');
+const lang = isEs ? 'es' : 'en';
+const description = isEs
+	? 'Portfolio de desarrollador fullstack especializado en tecnologías modernas'
+	: 'Fullstack developer portfolio specializing in modern technologies'
+---
 <!doctype html>
-<html lang="es">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>Arturo Tinajas - Desarrollador Fullstack</title>
-		<meta name="description" content="Portfolio de desarrollador fullstack especializado en tecnologías modernas" />
+		<title>Arturo Tinajas - Fullstack Developer</title>
+		<meta name="description" content={description} />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>		
 		<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />          

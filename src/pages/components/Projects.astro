@@ -1,11 +1,13 @@
 ---
 import { Image } from 'astro:assets';
 import Card from '../components/Card.astro';
+const { t } = Astro.props;
 
 const projects = [
   {
     title: "My Task Board",
-    description: "🔧 Aplicación full-stack con Next.Js para gestionar tareas con funciones CRUD vía HTTP (GET, POST, PUT, DELETE) y gestión de estados con persistencia en DB.",
+    // description: "🔧 Aplicación full-stack con Next.Js para gestionar tareas con funciones CRUD vía HTTP (GET, POST, PUT, DELETE) y gestión de estados con persistencia en DB.",
+    description: t.projects.descriptions.myTaskBoard,
     techIcon: ["nextjs", "react", "typescript", "supabase", "postgresql", "nodejs", "tailwindcss", "css3", "html5"],
     image: "task-board.png",
     alt: "Task Board",
@@ -247,9 +249,9 @@ const projects = [
 
 <section id="projects" class="section">
 	<div class="container">
-		<h2 class="section-title">Proyectos Destacados</h2>
+		<h2 class="section-title">{t.projects.title}</h2>
 		<div class="project-filter">
-			<button class="btn btn-outline btn-active filter-btn-content" data-filter="all">Todos</button>
+			<button class="btn btn-outline btn-active filter-btn-content" data-filter="all">{t.projects.filterAll}</button>
 
 			<button class="btn btn-outline" data-filter="devchallenges">
 				<span class="filter-btn-content">
@@ -349,23 +351,22 @@ const projects = [
 			const cards = document.querySelectorAll('.projects-grid .project-card');
 
 			function applyFilter(filter: any) {
-					cards.forEach((card: any) => {
-							const category = card.getAttribute('data-category');
-							const show = filter === 'all' || category === filter;
-							card.style.display = show ? '' : 'none';
-					});
+				cards.forEach((card: any) => {
+					const category = card.getAttribute('data-category');
+					const show = filter === 'all' || category === filter;
+					card.style.display = show ? '' : 'none';
+				});
 			}
 
 			buttons.forEach(btn => {
-					btn.addEventListener('click', () => {
-							const filter = btn.getAttribute('data-filter');
+				btn.addEventListener('click', () => {
+					const filter = btn.getAttribute('data-filter');
 
-							// Actualiza estado visual del botón activo
-							buttons.forEach(b => b.classList.remove('btn-active'));
-							btn.classList.add('btn-active');
+					buttons.forEach(b => b.classList.remove('btn-active'));
+					btn.classList.add('btn-active');
 
-							applyFilter(filter);
-					});
+					applyFilter(filter);
+				});
 			});
 
 			// Aplica el filtro inicial según el botón marcado inicialmente

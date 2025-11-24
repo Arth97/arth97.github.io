@@ -1,13 +1,17 @@
+---
+const { t } = Astro.props;
+---
+
 <section id="experience" class="section">
 	<div class="container">
-		<h2 class="section-title">Educación</h2>
+		<h2 class="section-title">{t.education.title}</h2>
 		<div class="education-section">
 			<div class="education-items">
 				<div class="education-item">
 					<div class="education-content">
-						<h3>Ingeniería Informática</h3>
-						<div class="education-specialization">Especialización en Ingeniería de Software</div>
-						<div class="education-school">Universidad Politécnica de Valencia</div>
+						<h3>{t.education.degree}</h3>
+						<div class="education-specialization">{t.education.specialization}</div>
+						<div class="education-school">{t.education.school}</div>
 						<div class="education-date">2017 - 2023</div>
 					</div>
 				</div>
