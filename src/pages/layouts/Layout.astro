@@ -95,22 +95,24 @@ const description = isEs
 		color: white;
 	}
 
-	.btn-primary:hover {
-		background: #2563eb;
-		transform: translateY(-2px);
-		box-shadow: var(--shadow-lg);
-	}
-
 	.btn-outline {
 		background: transparent;
 		color: var(--color-secondary);
 		border: 2px solid var(--color-secondary);
 	}
 
-	.btn-outline:hover {
-		background: var(--color-secondary);
-		color: white;
-		transform: translateY(-2px);
+	@media (hover: hover) {
+		.btn-primary:hover {
+			background: #2563eb;
+			transform: translateY(-2px);
+			box-shadow: var(--shadow-lg);
+		}
+
+		.btn-outline:hover {
+			background: var(--color-secondary);
+			color: white;
+			transform: translateY(-2px);
+		}
 	}
 
 	.btn-active {

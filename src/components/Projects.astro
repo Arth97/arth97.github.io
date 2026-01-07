@@ -319,12 +319,15 @@ const projects = [
 		font-weight: 500;
 		transition: all 0.3s ease;
 		cursor: pointer;
-		&:hover {
-			background: rgba(var(--color-primary-rgb), 0.1);
-		}
 		&.active {
 			background: var(--color-secondary);
 			color: var(--color-on-primary);
+		}
+	}
+
+	@media (hover: hover) {
+		.filter-btn:hover {
+			background: rgba(var(--color-primary-rgb), 0.1);
 		}
 	}
 
@@ -341,6 +344,7 @@ const projects = [
 		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 		gap: 2rem;
 	}
+  
 
 	@media (max-width: 768px) {
 		.projects-grid {
