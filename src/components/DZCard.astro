@@ -1,29 +1,31 @@
 ---
 import { Image } from 'astro:assets';
-const {
-  title,
-  description,
-  techIcon = [],
-  image,
-  alt,
-  codeLink = "#",
-  demoLink = "#",
-  category = "all"
-} = Astro.props;
+const { t } = Astro.props;
+
+const DZProject = {
+  title: "DayZ Map Editor (Work In Progress)",
+  description: t.projects.descriptions.dayzMapEditorDescription,
+  techIcon: ["react", "threejs", "typescript", "tailwindcss", "vitejs", ],
+  image: "/DZEditor.png",
+  alt: "DayZ Editor",
+  codeLink: "",
+  demoLink: "",
+  category: "dzeditor"
+}
 ---
 
-<div class="project-card" data-category={category}>
+<div class="project-card" data-category={DZProject.category}>
   <div class="project-image">
-    <img src={image} alt={alt} />
-		{(codeLink !== "" || demoLink !== "") && (
+    <img src={DZProject.image} alt={DZProject.alt} />
+		{(DZProject.codeLink !== "" || DZProject.demoLink !== "") && (
     	<div class="project-overlay">
 				<div class="project-links">
-					<a href={codeLink} class="project-link" title="Ver código" target="_blank" rel="noopener">
+					<a href={DZProject.codeLink} class="project-link" title="Ver código" target="_blank" rel="noopener">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="32" height="32">
 							<path fill-rule="evenodd" d="M14.447 3.026a.75.75 0 0 1 .527.921l-4.5 16.5a.75.75 0 0 1-1.448-.394l4.5-16.5a.75.75 0 0 1 .921-.527ZM16.72 6.22a.75.75 0 0 1 1.06 0l5.25 5.25a.75.75 0 0 1 0 1.06l-5.25 5.25a.75.75 0 1 1-1.06-1.06L21.44 12l-4.72-4.72a.75.75 0 0 1 0-1.06Zm-9.44 0a.75.75 0 0 1 0 1.06L2.56 12l4.72 4.72a.75.75 0 0 1-1.06 1.06L.97 12.53a.75.75 0 0 1 0-1.06l5.25-5.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
 						</svg>					
 					</a>
-					<a href={demoLink} class="project-link" title="Ver demo" target="_blank" rel="noopener">
+					<a href={DZProject.demoLink} class="project-link" title="Ver demo" target="_blank" rel="noopener">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
 							<path fill-rule="evenodd" d="M2.25 5.25a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3V15a3 3 0 0 1-3 3h-3v.257c0 .597.237 1.17.659 1.591l.621.622a.75.75 0 0 1-.53 1.28h-9a.75.75 0 0 1-.53-1.28l.621-.622a2.25 2.25 0 0 0 .659-1.59V18h-3a3 3 0 0 1-3-3V5.25Zm1.5 0v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5Z" clip-rule="evenodd" />
 						</svg>					
@@ -33,10 +35,10 @@ const {
 		)}
   </div>
   <div class="project-content">
-    <h3 class="project-title">{title}</h3>
-    <p class="project-description">{description}</p>
+    <h3 class="project-title">{DZProject.title}</h3>
+    <p class="project-description">{DZProject.description}</p>
     <div class="project-tech">
-      {techIcon.map((t: any) => (
+      {DZProject.techIcon.map((t: any) => (
 				<Image src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${t}/${t}-original.svg`} alt={`${t}`} loading="eager" width="35" height="35" /> 
       ))}
     </div>
@@ -50,6 +52,7 @@ const {
 		overflow: hidden;
 		box-shadow: var(--shadow-md);
 		transition: all 0.3s ease;
+    margin-bottom: 2.5rem;
 	}
 
 	.project-card:hover {
@@ -59,7 +62,7 @@ const {
 
 	.project-image {
 		position: relative;
-		height: 200px;
+		height: 600px;
 		overflow: hidden;
 	}
 

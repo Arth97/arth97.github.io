@@ -1,9 +1,60 @@
 ---
 import { Image } from 'astro:assets';
 import Card from './Card.astro';
+import DZCard from './DZCard.astro';
 const { t } = Astro.props;
 
 const projects = [
+  {
+    title: "Country Page - WorldRanks",
+    description: t.projects.descriptions.countryPageWorldRanks,
+    techIcon: ["react", "javascript", "tailwindcss", "css3", "html5"],
+    image: "/country-page-worldrank.png",
+    alt: "Country Page - WorldRanks",
+    codeLink: "https://github.com/Arth97/devchallenge-country-page-worldRanks",
+    demoLink: "https://arth97.github.io/devChallenge-country-page-worldRanks",
+    category: "devchallenges"
+  },
+  {
+    title: "Country Quiz",
+    description: t.projects.descriptions.countryQuiz,
+    techIcon: ["react", "javascript", "tailwindcss", "css3", "html5"],
+    image: "/country-quiz.png",
+    alt: "Country Quiz",
+    codeLink: "https://github.com/Arth97/devchallenge-country-quiz",
+    demoLink: "https://arth97.github.io/devchallenge-country-quiz",
+    category: "devchallenges"
+  },
+  {
+    title: "REST Countries API",
+    description: t.projects.descriptions.restCountriesApi,
+    techIcon: ["react", "javascript", "tailwindcss", "css3", "html5"],
+    image: "/countries-color-theme.png",
+    alt: "REST Countries API",
+    codeLink: "https://github.com/Arth97/frontendmentor-countries-page-color-theme-switcher",
+    demoLink: "https://arth97.github.io/frontendmentor-countries-page-color-theme-switcher",
+    category: "frontendmentor"
+  },
+  {
+    title: "GitHub Profile",
+    description: t.projects.descriptions.githubProfile,
+    techIcon: ["react", "javascript", "tailwindcss", "css3", "html5"],
+    image: "/github-profile.png",
+    alt: "GitHub Profile",
+    codeLink: "https://github.com/Arth97/devChallenge-github-profile",
+    demoLink: "https://arth97.github.io/devChallenge-github-profile",
+    category: "devchallenges"
+  },
+	{
+    title: "Time Tracking Dashboard",
+    description: t.projects.descriptions.timeTrackingDashboard,
+    techIcon: ["react", "javascript", "tailwindcss", "css3", "html5"],
+    image: "/time-tracking-dashboard.png",
+    alt: "Time Tracking Dashboard",
+    codeLink: "https://github.com/Arth97/frontendmentor-time-tracking-dashboard",
+    demoLink: "https://arth97.github.io/frontendmentor-time-tracking-dashboard",
+    category: "frontendmentor"
+  },
   {
     title: "My Task Board",
     // description: "🔧 Aplicación full-stack con Next.Js para gestionar tareas con funciones CRUD vía HTTP (GET, POST, PUT, DELETE) y gestión de estados con persistencia en DB.",
@@ -16,58 +67,8 @@ const projects = [
     category: "devchallenges"
   },
   {
-    title: "Country Quiz",
-    description: "🌍 Aplicación en React que genera quizzes dinámicos a partir de una API REST. Manejo de estados, validación en tiempo real y control de flujo del juego.",
-    techIcon: ["react", "javascript", "tailwindcss", "css3", "html5"],
-    image: "/country-quiz.png",
-    alt: "Country Quiz",
-    codeLink: "https://github.com/Arth97/devchallenge-country-quiz",
-    demoLink: "https://arth97.github.io/devchallenge-country-quiz",
-    category: "devchallenges"
-  },
-  {
-    title: "Country Page - WorldRanks",
-    description: "📊 Web app con tabla dinámica y filtros avanzados usando datos de países. Incluye ordenamiento, búsqueda, filtros combinados y navegación entre países relacionados.",
-    techIcon: ["react", "javascript", "tailwindcss", "css3", "html5"],
-    image: "/country-page-worldrank.png",
-    alt: "Country Page - WorldRanks",
-    codeLink: "https://github.com/Arth97/devchallenge-country-page-worldRanks",
-    demoLink: "https://arth97.github.io/devChallenge-country-page-worldRanks",
-    category: "devchallenges"
-  },
-	{
-    title: "Time Tracking Dashboard",
-    description: "⏱️ Dashboard responsive con JavaScript, Tailwind, HTML, CSS y JS. Visualiza datos desde JSON local, cambia entre Daily, Weekly y Monthly con actualización dinámica.",
-    techIcon: ["react", "javascript", "tailwindcss", "css3", "html5"],
-    image: "/time-tracking-dashboard.png",
-    alt: "Time Tracking Dashboard",
-    codeLink: "https://github.com/Arth97/frontendmentor-time-tracking-dashboard",
-    demoLink: "https://arth97.github.io/frontendmentor-time-tracking-dashboard",
-    category: "frontendmentor"
-  },
-	{
-    title: "REST Countries API",
-    description: "🌍 Web app en React que consume la API REST Countries para listar, buscar y filtrar países por región. Incluye detalles con navegación entre fronteras y modo claro/oscuro.",
-    techIcon: ["react", "javascript", "tailwindcss", "css3", "html5"],
-    image: "/countries-color-theme.png",
-    alt: "REST Countries API",
-    codeLink: "https://github.com/Arth97/frontendmentor-countries-page-color-theme-switcher",
-    demoLink: "https://arth97.github.io/frontendmentor-countries-page-color-theme-switcher",
-    category: "frontendmentor"
-  },
-  {
-    title: "GitHub Profile",
-    description: "🔍 App responsive en JavaScript que integra múltiples endpoints de la GitHub REST API para buscar usuarios, listar repositorios y abrir detalles en nuevas pestañas.",
-    techIcon: ["react", "javascript", "tailwindcss", "css3", "html5"],
-    image: "/github-profile.png",
-    alt: "GitHub Profile",
-    codeLink: "https://github.com/Arth97/devChallenge-github-profile",
-    demoLink: "https://arth97.github.io/devChallenge-github-profile",
-    category: "devchallenges"
-  },
-  {
     title: "Simple Coffee Listing",
-    description: "☕ Página con listado dinámico de productos usando componentes reutilizables en React. Incluye filtros, datos desde JSON y renderizado condicional.",
+    description: t.projects.descriptions.simpleCoffeeListing,
     techIcon: ["react", "javascript", "tailwindcss", "css3", "html5"],
     image: "/coffee-listing.png",
     alt: "Simple Coffee Listing",
@@ -77,7 +78,7 @@ const projects = [
   },
 	{
     title: "Guess The Word Game",
-    description: "🧠 Juego en Vanilla JS con lógica de validación, control de intentos y manipulación del DOM. Palabras aleatorias, inputs automáticos y reinicio al fallar.",
+    description: t.projects.descriptions.guessTheWordGame,
     techIcon: ["javascript", "tailwindcss", "css3", "html5"],
     image: "/guess-the-word.png",
     alt: "Guess The Word Game",
@@ -87,7 +88,7 @@ const projects = [
   },
 	{
     title: "Music Player",
-    description: "🎵 App en Vanilla JS que permite reproducir, pausar y navegar canciones. Control del progreso y estado del reproductor con manipulación directa del DOM.",
+    description: t.projects.descriptions.musicPlayer,
     techIcon: ["javascript", "tailwindcss", "css3", "html5"],
     image: "/music-player.png",
     alt: "Music Player",
@@ -97,7 +98,7 @@ const projects = [
   },
 	{
     title: "Multi-step Register Form",
-    description: "📝 Formulario con validaciones de campos, navegación paso a paso y control de estados usando solo HTML, CSS y JavaScript puro.",
+    description: t.projects.descriptions.multistepRegisterForm,
     techIcon: ["javascript", "tailwindcss", "css3", "html5"],
     image: "/register-form.png",
     alt: "Multi-step Register Form",
@@ -107,7 +108,7 @@ const projects = [
   },
 	{
     title: "Device Shop Checkout",
-    description: "🛒 Checkout de una tienda hecho con HTML y CSS. Diseño responsivo usando Flexbox y CSS Grid. Formulario validado y estructura dividida en dos secciones.",
+    description: t.projects.descriptions.deviceShopCheckout,
     techIcon: ["tailwindcss", "css3", "html5"],
     image: "/device-shop-checkout.png",
     alt: "Device Shop Checkout",
@@ -117,7 +118,7 @@ const projects = [
   },
 	{
     title: "Contact Page",
-    description: "📬 Formulario de contacto con inputs, select y diseño responsivo. Hecho con HTML y CSS puro, enfocado en buenas prácticas de estructura y maquetación.",
+    description: t.projects.descriptions.contactPage,
     techIcon: ["tailwindcss", "css3", "html5"],
     image: "/contact-page.png",
     alt: "Contact Page",
@@ -127,7 +128,7 @@ const projects = [
   },
 	{
     title: "Meet the Team Section",
-    description: "👥 Componente de presentación de equipo con layout en CSS Grid y posicionamiento relativo/absoluto. Diseño adaptable y estructura semántica en HTML.",
+    description: t.projects.descriptions.meetTheTeamSection,
     techIcon: ["tailwindcss", "css3", "html5"],
     image: "/meet-the-team.png",
     alt: "Meet the Team Section",
@@ -137,7 +138,7 @@ const projects = [
   },
 	{
     title: "Business Blog Card",
-    description: "📰 Tarjeta de blog diseñada con Flexbox y CSS. Estructura semántica, imagen superpuesta y estilo limpio con posicionamiento preciso.",
+    description: t.projects.descriptions.businessBlogCard,
     techIcon: ["tailwindcss", "css3", "html5"],
     image: "/business-blog.png",
     alt: "Business Blog Card",
@@ -147,7 +148,7 @@ const projects = [
   },
 	{
     title: "Simple Feature Section",
-    description: "✨ Diseño de 3 tarjetas responsivas con layout en Flexbox anidado. Estructura HTML semántica y estilo CSS limpio con buen manejo de tipografía y espaciado.",
+    description: t.projects.descriptions.simpleFeatureSection,
     techIcon: ["tailwindcss", "css3", "html5"],
     image: "/feature-section.png",
     alt: "Simple Feature Section",
@@ -157,7 +158,7 @@ const projects = [
   },
 	{
     title: "Testimonial Page",
-    description: "💬 Layout responsivo con Grid y Flexbox. Contiene testimonios, listas con íconos, y estilos adaptativos usando media queries y tipografía cuidada.",
+    description: t.projects.descriptions.testimonialPage,
     techIcon: ["tailwindcss", "css3", "html5"],
     image: "/testimonial-page.png",
     alt: "Testimonial Page",
@@ -167,7 +168,7 @@ const projects = [
   },
 	{
     title: "Article Listing",
-    description: "📝 Listado de artículos con imagen, título y fecha. Construido con Flexbox y estructura semántica, adaptado a distintos tamaños de pantalla.",
+    description: t.projects.descriptions.articleListing,
     techIcon: ["tailwindcss", "css3", "html5"],
     image: "/article-listing.png",
     alt: "Article Listing",
@@ -177,7 +178,7 @@ const projects = [
   },
 	{
     title: "Join Our Newsletter",
-    description: "📧 Formulario de suscripción con estructura HTML semántica e interfaz estilizada. Uso de input, botón e íconos en una sección visualmente atractiva.",
+    description: t.projects.descriptions.joinOurNewsletter,
     techIcon: ["tailwindcss", "css3", "html5"],
     image: "/newsletter.png",
     alt: "Join Our Newsletter",
@@ -187,7 +188,7 @@ const projects = [
   },
 	{
     title: "Minimal Blog Card",
-    description: "📰 Componente básico de blog con estructura HTML y estilos CSS. Presenta imagen, título, descripción y tag en un formato simple y elegante.",
+    description: t.projects.descriptions.minimalBlogCard,
 		techIcon: ["tailwindcss", "css3", "html5"],
     image: "/minimal-blog-card.png",
     alt: "Minimal Blog Card",
@@ -197,7 +198,7 @@ const projects = [
   },
 	{
     title: "Simple Frequently Asked Questions (FAQ)",
-    description: "❓ Implementación básica de FAQ usando HTML y CSS, enfocada en accesibilidad, navegación por teclado y formato claro de preguntas y respuestas.",
+    description: t.projects.descriptions.simpleFaq,
 		techIcon: ["tailwindcss", "css3", "html5"],
     image: "/faq.png",
     alt: "Simple Frequently Asked Questions (FAQ)",
@@ -207,7 +208,7 @@ const projects = [
   },
 	{
     title: "Contact Form",
-    description: "📧 Formulario accesible con validación en tiempo real, mensajes para lectores de pantalla y navegación completa por teclado. Diseño responsivo con feedback visual y toast de éxito.",
+    description: t.projects.descriptions.contactForm,
     techIcon: ["tailwindcss", "css3", "html5"],
     image: "/contact-form-mentor.png",
     alt: "Contact Form",
@@ -217,7 +218,7 @@ const projects = [
   },
 	{
     title: "Social Links Profile",
-    description: "🔗 Perfil estático con enlaces sociales, diseño responsivo y estados de hover y focus para accesibilidad y mejor experiencia de usuario.",
+    description: t.projects.descriptions.socialLinksProfile,
     techIcon: ["tailwindcss", "css3", "html5"],
     image: "/social-links-profile.png",
     alt: "Social Links Profile",
@@ -227,7 +228,7 @@ const projects = [
   },
 	{
     title: "Blog Preview Card",
-    description: "📝 Componente visual estático con diseño responsivo y efectos de hover y focus para mejorar la interacción y accesibilidad.",
+    description: t.projects.descriptions.blogPreviewCard,
     techIcon: ["tailwindcss", "css3", "html5"],
     image: "/blog-preview-card-mentor.png",
     alt: "Blog Preview Card",
@@ -251,7 +252,14 @@ const projects = [
 	<div class="container">
 		<h2 class="section-title">{t.projects.title}</h2>
 		<div class="project-filter">
-			<button class="btn btn-outline btn-active filter-btn-content" data-filter="all">{t.projects.filterAll}</button>
+			<!-- <button class="btn btn-outline btn-active filter-btn-content" data-filter="all">{t.projects.filterAll}</button> -->
+
+			<button class="btn btn-outline btn-active" data-filter="dzeditor">
+				<span class="filter-btn-content">
+					<img src="/dz.png" alt="DZ Editor" width="20" height="20" />
+					 DZ Editor
+				</span>
+			</button>
 
 			<button class="btn btn-outline" data-filter="devchallenges">
 				<span class="filter-btn-content">
@@ -267,6 +275,7 @@ const projects = [
 				</span>				
 			</button>
 		</div>
+    <DZCard t={t} />
 		<div class="projects-grid">
 			{projects.map(project => (
 				<Card
@@ -347,30 +356,34 @@ const projects = [
 
 <script>
 	document.addEventListener('DOMContentLoaded', () => {
-			const buttons = document.querySelectorAll('.project-filter [data-filter]');
-			const cards = document.querySelectorAll('.projects-grid .project-card');
+		const buttons = document.querySelectorAll('.project-filter [data-filter]');
+		const cards = document.querySelectorAll('#projects .project-card');
 
-			function applyFilter(filter: any) {
-				cards.forEach((card: any) => {
-					const category = card.getAttribute('data-category');
-					const show = filter === 'all' || category === filter;
-					card.style.display = show ? '' : 'none';
-				});
-			}
+		function applyFilter(filter: any) {
+			cards.forEach((card: any) => {
+				const category = card.getAttribute('data-category');
+				const show = filter === 'all' || category === filter;
+				card.style.display = show ? '' : 'none';
+			});
+		}
 
-			buttons.forEach(btn => {
-				btn.addEventListener('click', () => {
-					const filter = btn.getAttribute('data-filter');
+		buttons.forEach(btn => {
+			btn.addEventListener('click', () => {
+				const filter = btn.getAttribute('data-filter');
+				const isActive = btn.classList.contains('btn-active');
 
+				if (isActive) {
+					buttons.forEach(b => b.classList.remove('btn-active'));
+					applyFilter('all');
+				} else {
 					buttons.forEach(b => b.classList.remove('btn-active'));
 					btn.classList.add('btn-active');
-
 					applyFilter(filter);
-				});
+				}
 			});
+		});
 
-			// Aplica el filtro inicial según el botón marcado inicialmente
-			const initial = document.querySelector('.project-filter .btn-active')?.getAttribute('data-filter') || 'all';
-			applyFilter(initial);
+		const initial = document.querySelector('.project-filter .btn-active')?.getAttribute('data-filter') || 'dzeditor';
+		applyFilter(initial);
 	});
 </script>
