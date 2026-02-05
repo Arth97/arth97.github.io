@@ -5,6 +5,7 @@ export const dict = {
       about: 'Sobre mí',
       experience: 'Experiencia',
       projects: 'Proyectos',
+      education: 'Educación',
       contact: 'Contacto'
     },
     hero: {
@@ -40,7 +41,7 @@ export const dict = {
 			}
     },
     education: {
-      title: 'Educación',
+      title: 'Educación & Certificaciones',
       degree: 'Ingeniería Informática',
       specialization: 'Especialización en Ingeniería de Software',
       school: 'Universidad Politécnica de Valencia'
@@ -111,6 +112,7 @@ export const dict = {
       about: 'About',
       experience: 'Experience',
       projects: 'Projects',
+      education: 'Education',
       contact: 'Contact'
     },
     hero: {
@@ -146,7 +148,7 @@ export const dict = {
 			}
     },
     education: {
-      title: 'Education',
+      title: 'Education & Certifications',
       degree: 'Computer Engineering',
       specialization: 'Specialization in Software Engineering',
       school: 'Polytechnic University of Valencia'

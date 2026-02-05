@@ -1,23 +1,98 @@
 ---
 const { t } = Astro.props;
+
+const items = [
+  {
+    type: "education",
+    title: t.education.degree,
+    subtitle: t.education.specialization,
+    institution: t.education.school,
+    date: "2017 - 2023",
+		image: "/UPV.png"
+  },
+  {
+		type: "certificate",
+		title: "Introduction to Linux (LF-UPV-101x)",
+		institution: "The Linux Foundation · UPV · edX",
+		category: "System Administration",
+		skills: [
+			"Bash Shell",
+			"Command Line",
+			"File Management",
+			"Linux Security",
+			"Scripting",
+			"System Configuration"
+		],
+		date: "Feb 2026",
+		link: "https://courses.edx.org/certificates/65e27310c24a45c28daa7e4f38c68c47",
+		image: "/TheLinuxFoundation.png"
+	},
+	{
+		type: "certificate",
+		title: "Introduction to Data Science",
+		institution: "Santander Open Academy",
+		date: "Jan 2026",
+		credentialId: "OA-2026-0123002188663",
+		image: "/SantanderOpenAcademy.png"
+	}
+];
 ---
 
-<section id="experience" class="section">
-	<div class="container">
-		<h2 class="section-title">{t.education.title}</h2>
-		<div class="education-section">
-			<div class="education-items">
-				<div class="education-item">
-					<div class="education-content">
-						<h3>{t.education.degree}</h3>
-						<div class="education-specialization">{t.education.specialization}</div>
-						<div class="education-school">{t.education.school}</div>
-						<div class="education-date">2017 - 2023</div>
+<section id="education" class="section">
+  <div class="container">
+    <h2 class="section-title">
+      {t.education.title}
+    </h2>
+
+    <div class="education-section">
+      <div class="education-items">
+        {items.map(item => (
+					<div class={`education-item ${item.type}`}>
+						{item.image && (
+							<div class="education-image">
+								<img src={item.image} alt={`${item.institution} logo`} />
+							</div>
+						)}
+						<div class="education-content">
+							<h3>{item.title}</h3>
+				
+							{item.category && (
+								<div class="education-category">
+									{item.category}
+								</div>
+							)}
+				
+							<div class="education-school">
+								{item.institution}
+							</div>
+				
+							{item.skills && (
+								<div class="education-skills">
+									{item.skills.join(" · ")}
+								</div>
+							)}
+				
+							<div class="education-date">
+								{item.date}
+							</div>
+				
+							{item.link && (
+								<a href={item.link} target="_blank" rel="noopener" class="education-link">
+									View credential →
+								</a>
+							)}
+				
+							{item.credentialId && (
+								<div class="education-credential">
+									Credential ID: {item.credentialId}
+								</div>
+							)}
+						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+				))}				
+      </div>
+    </div>
+  </div>
 </section>
 
 <style>
@@ -40,6 +115,24 @@ const { t } = Astro.props;
 		margin-bottom: 1.5rem;
 	}
 
+	.education-image {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.education-image img {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 150px;
+		height: 150px;
+		object-fit: contain;
+		border-radius: 0.35rem;
+		background: transparent;
+		padding: 0.25rem;
+	}
+
 	.education-items {
 		display: flex;
 		flex-direction: column;
@@ -47,6 +140,9 @@ const { t } = Astro.props;
 	}
 
 	.education-item {
+		display: flex;
+		gap: 1rem;
+		align-items: center;
 		padding: 1rem;
 		background: var(--color-surface);
 		border-radius: 0.5rem;
@@ -60,8 +156,38 @@ const { t } = Astro.props;
 
 	.education-item:hover .education-specialization,
 	.education-item:hover .education-school,
-	.education-item:hover .education-date {
+	.education-item:hover .education-date,
+	.education-item:hover .education-credential {
 		color: rgba(255, 255, 255, 0.8);
+	}
+
+	.education-category {
+		font-size: 1rem;
+		color: var(--color-text);
+		margin-bottom: 0.25rem;
+	}
+
+	.education-skills,
+	.education-details {
+		font-size: 0.85rem;
+		color: var(--color-text-light);
+		margin-bottom: 0.25rem;
+	}
+
+	.education-details {
+		font-style: italic;
+	}
+
+	.education-link {
+		display: inline-block;
+		margin-top: 0.5rem;
+		font-size: 0.75rem;
+		color: var(--color-primary);
+		text-decoration: none;
+	}
+
+	.education-item:hover .education-link {
+		color: white;
 	}
 
 	.education-content > h3 {
@@ -86,9 +212,35 @@ const { t } = Astro.props;
 		color: var(--color-text-light);
 	}
 
+	.education-credential {	
+		font-size: 0.75rem;
+		margin-top: 0.5rem;
+		color: var(--color-text-light);
+	}
+
 	@media (max-width: 768px) {
 		.education-section {
 			padding: 1.5rem;
 		}
+
+		.education-item {
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+		}
+
+		.education-image img {
+			width: 110px;
+			height: 110px;
+		}
+
+		.education-content {
+			width: 100%;
+		}
+
+		.education-section {
+			padding: 1.5rem;
+		}
 	}
+
 </style>
