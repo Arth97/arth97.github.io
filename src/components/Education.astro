@@ -27,6 +27,22 @@ const items = [
 		link: "https://courses.edx.org/certificates/65e27310c24a45c28daa7e4f38c68c47",
 		image: "/TheLinuxFoundation.png"
 	},
+  {
+		type: "certificate",
+		title: "VISPY201X: Python programming: data visualization",
+		institution: "UPV · edX",
+		category: "Data Science",
+		skills: [
+			"Python",
+			"Pandas",
+			"Seaborn",
+			"Matplotlib",
+			"Data Analysis",
+		],
+		date: "Feb 2026",
+		link: "https://courses.edx.org/certificates/baf3c2391561499e9e009b3251ca75a5",
+		image: "/UPV.png"
+	},
 	{
 		type: "certificate",
 		title: "Introduction to Data Science",
@@ -155,7 +171,9 @@ const items = [
 	}
 
 	.education-item:hover .education-specialization,
+	.education-item:hover .education-category,
 	.education-item:hover .education-school,
+	.education-item:hover .education-skills,
 	.education-item:hover .education-date,
 	.education-item:hover .education-credential {
 		color: rgba(255, 255, 255, 0.8);
