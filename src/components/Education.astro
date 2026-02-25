@@ -43,8 +43,37 @@ const items = [
 		link: "https://courses.edx.org/certificates/baf3c2391561499e9e009b3251ca75a5",
 		image: "/UPV.png"
 	},
-	{
+  {
 		type: "certificate",
+		title: "PY101x: Python: aprender a programar",
+		institution: "UPV · edX",
+		category: "Programming Fundamentals",
+		skills: [
+			"Python",
+			"Control Flow",
+			"Functions",
+			"File Handling",
+			"Problem Solving"
+		],
+		date: "Feb 2026",
+		link: "https://courses.edx.org/certificates/ce325e1cfe4840d7a549a0e1b6d7e7c2",
+		image: "/UPV.png"
+	},
+  {
+		type: "proofofcompletion",
+		title: "M001: MongoDB Basics",
+		institution: "Mongo University",
+		category: "Data Bases",
+		skills: [
+			"NoSQL",
+			"Data Modeling",
+		],
+		date: "Aug 2022",
+		link: "https://learn.mongodb.com/c/rjIbYyUuVsu3GJmokEyPgw",
+		image: "/MongoUniversity.png"
+	},
+	{
+		type: "proofofcompletion",
 		title: "Introduction to Data Science",
 		institution: "Santander Open Academy",
 		date: "Jan 2026",
@@ -64,6 +93,11 @@ const items = [
       <div class="education-items">
         {items.map(item => (
 					<div class={`education-item ${item.type}`}>
+						{(item.type === "certificate" || item.type === "proofofcompletion") && (
+							<div class={`type-chip ${item.type}`}>
+								{item.type === "certificate" ? "Certificate" : "Proof of Completion"}
+							</div>
+						)}
 						{item.image && (
 							<div class="education-image">
 								<img src={item.image} alt={`${item.institution} logo`} />
@@ -156,6 +190,7 @@ const items = [
 	}
 
 	.education-item {
+		position: relative;
 		display: flex;
 		gap: 1rem;
 		align-items: center;
@@ -234,6 +269,29 @@ const items = [
 		font-size: 0.75rem;
 		margin-top: 0.5rem;
 		color: var(--color-text-light);
+	}
+
+	.type-chip {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		font-size: 0.5rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		padding: 0.5rem 0.75rem;
+		border-radius: 1rem;
+		background: #22c55e;
+		color: white;
+		/* z-index: 1; */
+		/* line-height: 1; */
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.type-chip.proofofcompletion {
+		background: var(--color-secondary);
 	}
 
 	@media (max-width: 768px) {
