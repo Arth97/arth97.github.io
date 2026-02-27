@@ -50,7 +50,8 @@ export const dict = {
       title: 'Proyectos Destacados',
       filterAll: 'Todos',
 			descriptions: {
-        dayzMapEditorDescription: "🎮 Editor procedural de mapas para DayZ usando Three.js, React3Fiber, Drei y Turf.js. Carga heightmaps (.asc), dibuja zonas de biomas con Turf.js y posiciona las estructuras seleccionadas automáticamente. Exporta a formatos compatibles con Terrain Builder(.txt).",
+        // dayzMapEditorDescription: "🎮 Editor procedural de mapas para DayZ usando Three.js, React3Fiber, Drei y Turf.js. Carga heightmaps (.asc), dibuja zonas de biomas con Turf.js y posiciona las estructuras seleccionadas automáticamente. Exporta a formatos compatibles con Terrain Builder(.txt).",        
+        dayzMapEditorDescription: "🎮 Sistema full-stack para edición y generación procedural de mapas 3D, diseñado bajo una arquitectura modular en pnpm-workspaces con separación clara entre UI, API y capa de negocio.\n\nEl motor procedural está desacoplado de la infraestructura siguiendo principios de arquitectura hexagonal (Core + Geo + Domain), permitiendo escalabilidad, reutilización y testabilidad.\n\nPermite carga de heightmaps, definición de áreas y distribución automática de assets mediante algoritmos geoespaciales. Exporta resultados en formatos compatibles con herramientas externas.",
         myTaskBoard: "🔧 Aplicación full-stack con Next.Js para gestionar tareas con funciones CRUD vía HTTP (GET, POST, PUT, DELETE) y gestión de estados con persistencia en DB.",
         countryQuiz: "🌍 Aplicación en React que genera quizzes dinámicos a partir de una API REST. Manejo de estados, validación en tiempo real y control de flujo del juego.",
         countryPageWorldRanks: "📊 Web app con tabla dinámica y filtros avanzados usando datos de países. Incluye ordenamiento, búsqueda, filtros combinados y navegación entre países relacionados.",
@@ -157,7 +158,8 @@ export const dict = {
       title: 'Featured Projects',
       filterAll: 'All',
 			descriptions: {
-        dayzMapEditorDescription: "🎮 Procedural map editor for DayZ using Three.js, React3Fiber, Drei and Turf.js. Imports heightmaps (.asc), draws biomes zones with Turf.js and positions the selected structures automatically. Exports to compatible formats with Terrain Builder(.txt).",
+        // dayzMapEditorDescription: "🎮 Procedural map editor for DayZ using Three.js, React3Fiber, Drei and Turf.js. Imports heightmaps (.asc), draws biomes zones with Turf.js and positions the selected structures automatically. Exports to compatible formats with Terrain Builder(.txt).",
+        dayzMapEditorDescription: "🎮 Full-stack system for 3D map editing and procedural generation, designed with a modular architecture using pnpm workspaces and a clear separation between UI, API, and business logic layers.\n\nThe procedural engine is decoupled from infrastructure following hexagonal architecture principles (Core + Geo + Domain), enabling scalability, reusability, and testability.\n\nIt supports heightmap importing, area definition, and automatic asset distribution through geospatial algorithms. Results can be exported to formats compatible with external tools.",
         myTaskBoard: "🔧 Full-stack Next.js app to manage tasks with CRUD actions over HTTP (GET, POST, PUT, DELETE) plus state management with DB persistence.",
         countryQuiz: "🌍 React app that generates dynamic quizzes from a REST API. Includes state handling, real-time validation, and game-flow control.",
         countryPageWorldRanks: "📊 Web app with a dynamic table and advanced filters using country data. Supports sorting, search, combined filters, and navigation between related countries.",
