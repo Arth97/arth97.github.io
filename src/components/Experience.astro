@@ -11,41 +11,40 @@ const { t } = Astro.props;
 				<div class="timeline-marker"></div>
 				<div class="timeline-content">
 					<h3 class="timeline-title">Full Stack Developer</h3>
-					<div class="timeline-company">The Wise Seeker</div>
-					<div class="timeline-date">02/2024 – 11/2024</div>		
+					<div class="timeline-company">The Wise Seekers</div>
+					<div class="timeline-date">Feb 2024 – Nov 2024</div>		
 					<p class="timeline-description">
-						{t.experience.thewiseseeker.d1}
+						{t.experience.thewiseseeker.summary}
 					</p>
-					<p class="timeline-description">
-						{t.experience.thewiseseeker.d2}
-					</p>
-					<p class="timeline-description">
-						{t.experience.thewiseseeker.d3}
-					</p>
+					<ul class="timeline-list">
+						{t.experience.thewiseseeker.bullets.map((item: string) => (
+							<li>{item}</li>
+						))}
+					</ul>
 					<div class="timeline-skills">
 						<span class="skill-tag">
 							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg" alt="Angular" loading="eager" width="56" height="56" class="skill-tag-icon" class="skill-tag-icon" />
 						 	Angular
+						</span>
+						<span class="skill-tag">							
+							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg" alt="Redux" loading="eager" width="56" height="56" class="skill-tag-icon" />
+							Redux
 						</span>
 						<span class="skill-tag">
 							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" loading="eager" width="56" height="56" class="skill-tag-icon" />
 							Python
 						</span>
 						<span class="skill-tag">
-							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ngrx/ngrx-original.svg" alt="NGRX" loading="eager" width="56" height="56" class="skill-tag-icon" />
-							NGRX
-						</span>
-						<span class="skill-tag">							
-							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" loading="eager" width="56" height="56" class="skill-tag-icon" />
-							Bootstrap
+							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" alt="FastAPI" loading="eager" width="56" height="56" class="skill-tag-icon" />
+							FastAPI
 						</span>
 						<span class="skill-tag">
 							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind" loading="eager" width="56" height="56" class="skill-tag-icon" />
 							Tailwind
 						</span>
-						<span class="skill-tag">
-							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/storybook/storybook-original.svg" alt="Storybook" loading="eager" width="56" height="56" class="skill-tag-icon" />
-							Storybook
+						<span class="skill-tag">							
+							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" loading="eager" width="56" height="56" class="skill-tag-icon" />
+							Bootstrap
 						</span>
 						<span class="skill-tag">							
 							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="MongoDB" loading="eager" width="56" height="56" class="skill-tag-icon" />
@@ -55,57 +54,17 @@ const { t } = Astro.props;
 							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqldeveloper/sqldeveloper-original.svg" alt="SQL" loading="eager" width="56" height="56" class="skill-tag-icon" />
 							SQL
 						</span>
-					</div>
-				</div>
-			</div>
-			
-			<div class="timeline-item">
-				<div class="timeline-marker"></div>
-				<div class="timeline-content">
-					<h3 class="timeline-title">Software Developer</h3>
-					<div class="timeline-company">Wimtruck / Mojito360</div>
-					<div class="timeline-date">03/2022 – 05/2023</div>
-					<p class="timeline-description">
-						{t.experience.mojito360.d1}
-					</p>
-					<p class="timeline-description">
-						{t.experience.mojito360.d2}
-					</p>
-					<p class="timeline-description">
-						{t.experience.mojito360.d3}
-					</p>
-					<div class="timeline-skills">
 						<span class="skill-tag">
-							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg" alt="Angular" loading="eager" width="56" height="56" class="skill-tag-icon" />
-						 	Angular
+							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-plain.svg" alt="GitHub Actions" loading="eager" width="56" height="56" class="skill-tag-icon" />
+							GitHub Actions
 						</span>
 						<span class="skill-tag">
-							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="C#" loading="eager" width="56" height="56" class="skill-tag-icon" />
-							C#
+							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/storybook/storybook-original.svg" alt="Storybook" loading="eager" width="56" height="56" class="skill-tag-icon" />
+							Storybook
 						</span>
 						<span class="skill-tag">
-							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg" alt="Redux" loading="eager" width="56" height="56" class="skill-tag-icon" />
-							Redux
-						</span>
-						<span class="skill-tag">
-							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rxjs/rxjs-original.svg" alt="RxJs" loading="eager" width="56" height="56" class="skill-tag-icon" />
-							RxJs
-						</span>
-						<span class="skill-tag">
-							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ngrx/ngrx-original.svg" alt="NgRx" loading="eager" width="56" height="56" class="skill-tag-icon" />
-							NgRx
-						</span>
-						<span class="skill-tag">
-							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cypressio/cypressio-original.svg" alt="Cypress" loading="eager" width="56" height="56" class="skill-tag-icon" />
-							Cypress
-						</span>						
-						<span class="skill-tag">
-							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqldeveloper/sqldeveloper-original.svg" alt="SQL" loading="eager" width="56" height="56" class="skill-tag-icon" />
-							SQL
-						</span>
-						<span class="skill-tag">
-							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Azure Functions" loading="eager" width="56" height="56" class="skill-tag-icon" />
-							Azure Functions
+							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jest/jest-plain.svg" alt="Jest" loading="eager" width="56" height="56" class="skill-tag-icon" />
+							Jest
 						</span>
 					</div>
 				</div>
@@ -115,18 +74,84 @@ const { t } = Astro.props;
 				<div class="timeline-marker"></div>
 				<div class="timeline-content">
 					<h3 class="timeline-title">Full Stack Developer</h3>
-					<div class="timeline-company">Shop2Front </div>
-					<div class="timeline-date">05/2020 – 10/2020</div>
+					<div class="timeline-company">Wimtruck / Mojito360</div>
+					<div class="timeline-date">Mar 2022 – May 2023</div>
 					<p class="timeline-description">
-						{t.experience.shop2front.d1}
+						{t.experience.mojito360.summary}
 					</p>
+					<ul class="timeline-list">
+						{t.experience.mojito360.bullets.map((item: string) => (
+							<li>{item}</li>
+						))}
+					</ul>
+					<div class="timeline-skills">
+						<span class="skill-tag">
+							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg" alt="Angular" loading="eager" width="56" height="56" class="skill-tag-icon" />
+						 	Angular
+						</span>
+						<span class="skill-tag">
+							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rxjs/rxjs-original.svg" alt="RxJs" loading="eager" width="56" height="56" class="skill-tag-icon" />
+							RxJs
+						</span>
+						<span class="skill-tag">
+							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg" alt="Redux" loading="eager" width="56" height="56" class="skill-tag-icon" />
+							Redux
+						</span>
+						<span class="skill-tag">
+							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ngrx/ngrx-original.svg" alt="NgRx" loading="eager" width="56" height="56" class="skill-tag-icon" />
+							NgRx
+						</span>
+						<span class="skill-tag">
+							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="C#" loading="eager" width="56" height="56" class="skill-tag-icon" />
+							C#
+						</span>
+						<span class="skill-tag">
+							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg" alt=".NET" loading="eager" width="56" height="56" class="skill-tag-icon" />
+							.NET
+						</span>
+						<span class="skill-tag">
+							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-plain.svg" alt="Swagger" loading="eager" width="56" height="56" class="skill-tag-icon" />
+							Swagger
+						</span>
+						<span class="skill-tag">
+							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg" alt="Azure Functions" loading="eager" width="56" height="56" class="skill-tag-icon" />
+							Azure Functions
+						</span>
+						<span class="skill-tag">
+							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuredevops/azuredevops-plain.svg" alt="Azure DevOps" loading="eager" width="56" height="56" class="skill-tag-icon" />
+							Azure DevOps
+						</span>
+						<span class="skill-tag">
+							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqldeveloper/sqldeveloper-original.svg" alt="SQL" loading="eager" width="56" height="56" class="skill-tag-icon" />
+							SQL
+						</span>
+						<span class="skill-tag">
+							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cypressio/cypressio-original.svg" alt="Cypress" loading="eager" width="56" height="56" class="skill-tag-icon" />
+							Cypress
+						</span>
+						<span class="skill-tag">
+							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jest/jest-plain.svg" alt="Jest" loading="eager" width="56" height="56" class="skill-tag-icon" />
+							Jest
+						</span>
+					</div>
+				</div>
+			</div>
+			
+			<div class="timeline-item">
+				<div class="timeline-marker"></div>
+				<div class="timeline-content">
+					<h3 class="timeline-title">Freelance Full Stack</h3>
+					<div class="timeline-company">Shop2Front </div>
+					<div class="timeline-date">May 2020 – Oct 2020</div>
 					<p class="timeline-description">
-						{t.experience.shop2front.d2}
-						<p class="timeline-description">
-							{t.experience.shop2front.d3}
-						</p>
-						<p class="timeline-description">
-							{t.experience.shop2front.d4}
+						{t.experience.shop2front.summary}
+					</p>
+					<ul class="timeline-list">
+						{t.experience.shop2front.bullets.map((item: string) => (
+							<li>{item}</li>
+						))}
+					</ul>
+					<p class="timeline-description">
 						<a href="https://instagram.com/shop2front">Shop2front</a>
 					</p>
 					<div class="timeline-skills">
@@ -151,12 +176,20 @@ const { t } = Astro.props;
 							TypeScript
 						</span>
 						<span class="skill-tag">
-							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML" loading="eager" width="56" height="56" class="skill-tag-icon" />
-							HTML
-						</span>
+							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" loading="eager" width="56" height="56" class="skill-tag-icon" />
+							Bootstrap
+						</span>						
 						<span class="skill-tag">							
 							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg" alt="SASS" loading="eager" width="56" height="56" class="skill-tag-icon" />
 							SASS
+						</span>
+						<span class="skill-tag">
+							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3" loading="eager" width="56" height="56" class="skill-tag-icon" />
+							CSS3
+						</span>
+						<span class="skill-tag">
+							<Image src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML" loading="eager" width="56" height="56" class="skill-tag-icon" />
+							HTML
 						</span>
 					</div>
 				</div>
@@ -245,6 +278,18 @@ const { t } = Astro.props;
 		flex-wrap: wrap;
 		gap: 0.5rem;
 		margin-top: 1rem;
+	}
+
+	.timeline-list {
+		margin-top: 0.75rem;
+		margin-bottom: 0.75rem;
+		padding-left: 1.5rem;
+		list-style: disc;
+	}
+
+	.timeline-list li {
+		margin-bottom: 0.35rem;
+		line-height: 1.6;
 	}
 
 	.skill-tag {
