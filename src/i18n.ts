@@ -27,7 +27,8 @@ export const dict = {
 				summary: 'Full Stack Developer en plataforma de evaluación de talento basada en inteligencia artificial.',
 				bullets: [
 					'Desarrollo y mantenimiento de funcionalidades frontend en Angular dentro de una arquitectura de microfrontends, utilizando NgXs para la gestión de estado.',
-					'Refactorización y evolución de microservicios backend desarrollados en Python (FastAPI), aplicando buenas prácticas de diseño y separación de responsabilidades.',
+					'Diseño y desarrollo de APIs REST y gRPC utilizando Python (FastAPI, SQLAlchemy, Pydantic).',
+					'Refactorización y evolución de microservicios backend desarrollados en Python, aplicando buenas prácticas de diseño y separación de responsabilidades.',
 					'Optimización de consultas y acceso a datos en MongoDB y SQL mediante SQLAlchemy, garantizando consistencia en la comunicación entre servicios.',
 					'Reducción de deuda técnica mediante reorganización de componentes, mejora de cobertura de pruebas y resolución estructurada de incidencias.',
 					'Implementación de pruebas unitarias con Jest y documentación interactiva de componentes con Storybook.',
@@ -153,7 +154,8 @@ export const dict = {
 				summary: 'Full Stack Developer in an AI-powered talent assessment and hiring decision platform.',
 				bullets: [
 					'Developed and maintained frontend features in Angular within a microfrontends architecture, using NgXs for state management.',
-					'Refactored and evolved backend microservices built with Python (FastAPI), applying good design practices and clear separation of concerns.',
+					'Designed and developed REST and gRPC APIs using Python (FastAPI, SQLAlchemy, Pydantic).',
+					'Refactored and evolved backend microservices built with Python, applying good design practices and clear separation of concerns.',
 					'Optimized data access and queries in MongoDB and SQL through SQLAlchemy, ensuring consistency in communication between services.',
 					'Reduced technical debt by reorganizing components, improving test coverage and systematically resolving incidents.',
 					'Implemented unit tests with Jest and interactive component documentation with Storybook.',
