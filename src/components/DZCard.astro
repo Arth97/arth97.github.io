@@ -6,8 +6,13 @@ const DZProject = {
   title: "DayZ Map Editor (Work In Progress)",
   description: t.projects.descriptions.dayzMapEditorDescription,
   techIcon: ["react", "threejs", "nodejs", "express", "mongodb", "mongoose", "typescript", "tailwindcss", "vitejs", ],
-  image: "/DZEditor.png",
-  alt: "DayZ Editor",
+  carouselImages: [
+    { src: "/DZEditor.png", alt: "DayZ Editor - Vista principal" },
+    { src: "/DZEditor.png", alt: "DayZ Editor - Herramientas de terreno" },
+    { src: "/DZEditor.png", alt: "DayZ Editor - Colocación de objetos" },
+    { src: "/DZEditor.png", alt: "DayZ Editor - Configuración de iluminación" },
+    { src: "/DZEditor.png", alt: "DayZ Editor - Vista de exportación" },
+  ],
   codeLink: "",
   demoLink: "",
   category: "dzeditor"
@@ -16,7 +21,39 @@ const DZProject = {
 
 <div class="project-card" data-category={DZProject.category}>
   <div class="project-image">
-    <img src={DZProject.image} alt={DZProject.alt} />
+    <div class="carousel">
+      <button class="carousel-btn carousel-btn--prev" aria-label="Imagen anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      
+      <div class="carousel-track">
+        {/* Clone: last image (for seamless prev from first) */}
+        <img src={DZProject.carouselImages[4].src} alt={DZProject.carouselImages[4].alt} loading="lazy" />
+        
+        {/* 5 Real images */}
+        {DZProject.carouselImages.map((img, i) => (
+          <img src={img.src} alt={img.alt} loading={i === 0 ? "eager" : "lazy"} />
+        ))}
+        
+        {/* Clone: first image (for seamless next from last) */}
+        <img src={DZProject.carouselImages[0].src} alt={DZProject.carouselImages[0].alt} loading="lazy" />
+      </div>
+      
+      <button class="carousel-btn carousel-btn--next" aria-label="Siguiente imagen">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+      
+      <div class="carousel-indicators" aria-label="Navegación de imágenes">
+        {DZProject.carouselImages.map((_, i) => (
+          <button class="carousel-indicator" data-index={i} aria-label={`Ir a imagen ${i + 1}`}></button>
+        ))}
+      </div>
+    </div>
+    
 		{(DZProject.codeLink !== "" || DZProject.demoLink !== "") && (
     	<div class="project-overlay">
 				<div class="project-links">
@@ -66,15 +103,97 @@ const DZProject = {
 		overflow: hidden;
 	}
 
-	.project-image img {
+	/* Carousel Styles */
+	.carousel {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+	}
+
+	.carousel-track {
+		display: flex;
+		height: 100%;
+		transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+		will-change: transform;
+	}
+
+	.carousel-track img {
+		flex: 0 0 100%;
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		transition: transform 0.3s ease;
 	}
 
-	.project-card:hover .project-image img {
-		transform: scale(1.05);
+	/* Navigation Buttons */
+	.carousel-btn {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 3.5rem;
+		height: 3.5rem;
+		border-radius: 50%;
+		border: none;
+		background: rgba(0, 0, 0, 0.4);
+		color: white;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		opacity: 0.6;
+		transition: all 0.3s ease;
+		z-index: 10;
+	}
+
+	.carousel-btn:hover,
+	.carousel-btn:focus {
+		opacity: 1;
+		background: rgba(0, 0, 0, 0.7);
+		transform: translateY(-50%) scale(1.1);
+		outline: none;
+	}
+
+	.carousel-btn:focus-visible {
+		box-shadow: 0 0 0 3px rgba(var(--color-primary-rgb), 0.5);
+	}
+
+	.carousel-btn--prev { left: 1rem; }
+	.carousel-btn--next { right: 1rem; }
+
+	.carousel-btn svg {
+		width: 1.5rem;
+		height: 1.5rem;
+	}
+
+	/* Indicators */
+	.carousel-indicators {
+		position: absolute;
+		bottom: 1.5rem;
+		left: 50%;
+		transform: translateX(-50%);
+		display: flex;
+		gap: 0.5rem;
+		z-index: 10;
+	}
+
+	.carousel-indicator {
+		width: 0.75rem;
+		height: 0.75rem;
+		border-radius: 50%;
+		border: none;
+		background: rgba(255, 255, 255, 0.5);
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+
+	.carousel-indicator:hover {
+		background: rgba(255, 255, 255, 0.8);
+		transform: scale(1.2);
+	}
+
+	.carousel-indicator.active {
+		background: white;
+		transform: scale(1.3);
 	}
 
 	.project-overlay {
@@ -89,6 +208,7 @@ const DZProject = {
 		justify-content: center;
 		opacity: 0;
 		transition: opacity 0.3s ease;
+		z-index: 5;
 	}
 
 	.project-card:hover .project-overlay {
@@ -156,5 +276,162 @@ const DZProject = {
 		.project-content {
 			padding: 1.5rem;
 		}
+		
+		.carousel-btn {
+			width: 3rem;
+			height: 3rem;
+		}
+		
+		.carousel-btn--prev { left: 0.5rem; }
+		.carousel-btn--next { right: 0.5rem; }
 	}
 </style>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const carousel = document.querySelector<HTMLElement>('.carousel');
+		if (!carousel) return;
+
+		const trackElement = carousel.querySelector<HTMLElement>('.carousel-track');
+		const prevBtn = carousel.querySelector<HTMLButtonElement>('.carousel-btn--prev');
+		const nextBtn = carousel.querySelector<HTMLButtonElement>('.carousel-btn--next');
+		const indicators = carousel.querySelectorAll<HTMLButtonElement>('.carousel-indicator');
+
+		if (!trackElement || !prevBtn || !nextBtn) return;
+
+		const track = trackElement;
+
+		const slides = track.querySelectorAll<HTMLImageElement>('img');
+
+		const slideCount = slides.length;
+		const realSlides = 5;
+		let currentIndex = 1;
+		const slideWidth = 100;
+
+		let autoSlideInterval: ReturnType<typeof setInterval> | undefined;
+		let isTransitioning = false;
+
+		function updateCarousel(animate = true): void {
+			if (isTransitioning && animate) return;
+
+			isTransitioning = animate;
+
+			track.style.transition = animate
+				? 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+				: 'none';
+
+			track.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+
+			const indicatorIndex =
+				((currentIndex - 1) % realSlides + realSlides) % realSlides;
+
+			indicators.forEach((ind, i) => {
+				ind.classList.toggle('active', i === indicatorIndex);
+			});
+
+			if (animate) {
+				setTimeout(() => {
+					isTransitioning = false;
+				}, 500);
+			}
+		}
+
+		function goToSlide(
+			indicatorIndex: number,
+			animate = true
+		): void {
+			currentIndex = indicatorIndex + 1;
+			updateCarousel(animate);
+		}
+
+		function next(): void {
+			if (isTransitioning) return;
+
+			currentIndex++;
+			updateCarousel();
+
+			if (currentIndex >= slideCount - 1) {
+				setTimeout(() => {
+					currentIndex = 1;
+					updateCarousel(false);
+				}, 500);
+			}
+		}
+
+		function prev(): void {
+			if (isTransitioning) return;
+
+			currentIndex--;
+			updateCarousel();
+
+			if (currentIndex < 1) {
+				setTimeout(() => {
+					currentIndex = realSlides;
+					updateCarousel(false);
+				}, 500);
+			}
+		}
+
+		nextBtn.addEventListener('click', next);
+		prevBtn.addEventListener('click', prev);
+
+		indicators.forEach((indicator, index) => {
+			indicator.addEventListener('click', () => {
+				goToSlide(index);
+			});
+		});
+
+		carousel.addEventListener('keydown', (e: KeyboardEvent) => {
+			if (e.key === 'ArrowRight') next();
+			if (e.key === 'ArrowLeft') prev();
+		});
+
+		function startAutoSlide(): void {
+			stopAutoSlide();
+			autoSlideInterval = setInterval(next, 5000);
+		}
+
+		function stopAutoSlide(): void {
+			if (autoSlideInterval !== undefined) {
+				clearInterval(autoSlideInterval);
+				autoSlideInterval = undefined;
+			}
+		}
+
+		carousel.addEventListener('mouseenter', stopAutoSlide);
+		carousel.addEventListener('mouseleave', startAutoSlide);
+		carousel.addEventListener('focusin', stopAutoSlide);
+		carousel.addEventListener('focusout', startAutoSlide);
+
+		let startX = 0;
+		let startY = 0;
+
+		carousel.addEventListener(
+			'touchstart',
+			(e: TouchEvent) => {
+				startX = e.touches[0].clientX;
+				startY = e.touches[0].clientY;
+			},
+			{ passive: true }
+		);
+
+		carousel.addEventListener(
+			'touchend',
+			(e: TouchEvent) => {
+				const diffX = startX - e.changedTouches[0].clientX;
+				const diffY = startY - e.changedTouches[0].clientY;
+
+				if (
+					Math.abs(diffX) > Math.abs(diffY) &&
+					Math.abs(diffX) > 50
+				) {
+					diffX > 0 ? next() : prev();
+				}
+			},
+			{ passive: true }
+		);
+
+		updateCarousel(false);
+		startAutoSlide();
+	});
+</script>
