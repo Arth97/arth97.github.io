@@ -59,6 +59,11 @@ export const dict = {
 				],
 			}
 		},
+		education2: {
+			degree: 'Programa Avanzado en DevOps y Cloud',
+			// specialization: 'Especialización en Ingeniería de Software',
+			school: 'Universidad Internacional de La Rioja'
+		},
 		education: {
 			title: 'Educación & Certificaciones',
 			degree: 'Ingeniería Informática',
@@ -186,6 +191,11 @@ export const dict = {
 					'Implemented a responsive interface using Bootstrap, HTML, CSS and JavaScript.',
 				],
 			}
+		},
+		education2: {
+			degree: 'Advanced Program in DevOps and Cloud',
+			// specialization: 'Especialización en Ingeniería de Software',
+			school: 'International University of La Rioja'
 		},
 		education: {
 			title: 'Education & Certifications',

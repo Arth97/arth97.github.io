@@ -4,8 +4,16 @@ const { t } = Astro.props;
 const items = [
   {
     type: "education",
+    title: t.education2.degree,
+		specialization: t.education2.specialization,
+    institution: t.education2.school,
+    date: "2026 - 2027",
+		image: "/UNIR_Horizontal_Logo.png"
+  },
+  {
+    type: "education",
     title: t.education.degree,
-    subtitle: t.education.specialization,
+		specialization: t.education.specialization,
     institution: t.education.school,
     // date: "2017 - 2023",
 		image: "/UPV.png"
@@ -117,12 +125,19 @@ const items = [
 								<img src={item.image} alt={`${item.institution} logo`} />
 							</div>
 						)}
+						
 						<div class="education-content">
 							<h3>{item.title}</h3>
 				
 							{item.category && (
 								<div class="education-category">
 									{item.category}
+								</div>
+							)}
+
+							{item.specialization && (
+								<div class="education-specialization">
+									{item.specialization}
 								</div>
 							)}
 				
