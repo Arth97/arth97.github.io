@@ -30,6 +30,6 @@ const t = dict.en;
 		const browser = (navigator.language || '').toLowerCase();
 		const isEn = browser.startsWith('en');
 		if (!isEn && !location.pathname.startsWith('/es/'))
-			location.replace('/es/');
+			location.replace(`/es/${location.search}${location.hash}`);
 	} catch {}
 </script>
